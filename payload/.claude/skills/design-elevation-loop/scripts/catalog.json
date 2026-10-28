@@ -1,0 +1,1431 @@
+{
+ "version": 1,
+ "default_preset": "production",
+ "default_round_cap": 6,
+ "stall_k": 2,
+ "panel_axes": [
+  "hierarchy",
+  "typography_color",
+  "imagery",
+  "copy",
+  "trust",
+  "mobile",
+  "distinctiveness"
+ ],
+ "panel_axis_labels": {
+  "hierarchy": "위계·레이아웃·여백",
+  "typography_color": "타이포·색",
+  "imagery": "이미지·그래픽",
+  "copy": "문구 명확성",
+  "trust": "신뢰 장치",
+  "mobile": "모바일 화면",
+  "distinctiveness": "차별성·기억에 남음"
+ },
+ "question_sets": {
+  "quality1": [
+   "visual",
+   "type_color",
+   "imagery",
+   "motion"
+  ],
+  "quality2": [
+   "responsive",
+   "a11y",
+   "perf",
+   "content"
+  ]
+ },
+ "dimensions": [
+  {
+   "id": "visual",
+   "header": "시각 완성도",
+   "question": "시각 완성도(위계·레이아웃·여백·일관성)는 어느 수준까지 올릴까요?",
+   "levels": [
+    {
+     "level": 1,
+     "label": "기본 정돈",
+     "summary": "구조 결함 0 — 제목 체계·자리표시 문구",
+     "checks": [
+      {
+       "id": "vis.h1",
+       "desc": "페이지마다 h1이 정확히 하나",
+       "metric": "struct.h1_bad",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "vis.heading_skips",
+       "desc": "제목 단계 건너뜀 0(h2 다음 h4 등)",
+       "metric": "struct.heading_skips",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "체계 갖춤",
+     "summary": "하우스 규칙 검사·안티패턴 검출 통과",
+     "checks": [
+      {
+       "id": "vis.inspect",
+       "desc": "하우스 규칙 검사(inspect, 마케팅 페이지 규칙) FAIL 0 — 사유·증거를 적은 예외만 허용",
+       "metric": "inspect.fail",
+       "op": "==",
+       "value": 0,
+       "source": "inspect",
+       "requires": [
+        "inspect"
+       ]
+      },
+      {
+       "id": "vis.detect",
+       "desc": "안티패턴 검출(impeccable detect) 0건",
+       "metric": "detect.count",
+       "op": "==",
+       "value": 0,
+       "source": "detect",
+       "requires": [
+        "impeccable"
+       ]
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "완성도 높음",
+     "summary": "블라인드 판정단 위계 4점 이상 · 페르소나 High 0",
+     "checks": [
+      {
+       "id": "vis.panel4",
+       "desc": "블라인드 판정단 '위계·레이아웃·여백' 중앙값 4 이상(5점 척도)",
+       "metric": "panel.axis.hierarchy.ours",
+       "op": ">=",
+       "value": 4,
+       "source": "panel"
+      },
+      {
+       "id": "vis.persona",
+       "desc": "페르소나(디자인 전문가 포함) High 지적 미해결 0",
+       "metric": "persona.open_high",
+       "op": "==",
+       "value": 0,
+       "source": "persona"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "수상 지향",
+     "summary": "위계 4.5 이상 · 차별성 4.5 이상",
+     "checks": [
+      {
+       "id": "vis.panel4",
+       "desc": "블라인드 판정단 '위계·레이아웃·여백' 중앙값 4.5 이상",
+       "metric": "panel.axis.hierarchy.ours",
+       "op": ">=",
+       "value": 4.5,
+       "source": "panel"
+      },
+      {
+       "id": "vis.distinct",
+       "desc": "블라인드 판정단 '차별성·기억에 남음' 중앙값 4.5 이상",
+       "metric": "panel.axis.distinctiveness.ours",
+       "op": ">=",
+       "value": 4.5,
+       "source": "panel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "type_color",
+   "header": "타이포·색",
+   "question": "타이포그래피와 색(대비·서체 체계·브랜드 색)은 어느 수준까지 맞출까요?",
+   "levels": [
+    {
+     "level": 1,
+     "label": "읽힘 보장",
+     "summary": "WCAG AA 대비(측정 불가 글자는 캡처 확인) · 서체 3종 이하 · 본문 14px 이상",
+     "checks": [
+      {
+       "id": "tc.contrast_normal",
+       "desc": "보통 글자 대비 4.5:1 이상 전부(WCAG 1.4.3)",
+       "metric": "contrast.fail_normal",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "tc.contrast_large",
+       "desc": "큰 글자(24px·굵은 18.66px 이상) 대비 3:1 이상 전부",
+       "metric": "contrast.fail_large",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "tc.body",
+       "desc": "본문 글자 14px 이상",
+       "metric": "type.body_px_min",
+       "op": ">=",
+       "value": 14,
+       "source": "audit"
+      },
+      {
+       "id": "tc.families",
+       "desc": "서체 3종 이하",
+       "metric": "type.families",
+       "op": "<=",
+       "value": 3,
+       "source": "audit"
+      },
+      {
+       "id": "tc.contrast_unknown",
+       "desc": "그림·그라디언트·투명도·필터 위 글자(측정 불가로 잡힌 것)의 대비를 캡처로 확인 — 없으면 audit 결과를 증거로",
+       "metric": "contrast.unknown_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "타이포 체계",
+     "summary": "본문 16px · 줄 간격 1.5 · 크기 단계 10개 이하 · 줄 길이",
+     "checks": [
+      {
+       "id": "tc.body",
+       "desc": "본문 글자 16px 이상",
+       "metric": "type.body_px_min",
+       "op": ">=",
+       "value": 16,
+       "source": "audit"
+      },
+      {
+       "id": "tc.line_height",
+       "desc": "본문 줄 간격 1.5배 이상",
+       "metric": "type.line_height_min",
+       "op": ">=",
+       "value": 1.5,
+       "source": "audit"
+      },
+      {
+       "id": "tc.steps",
+       "desc": "글자 크기 단계 10개 이하",
+       "metric": "type.size_steps",
+       "op": "<=",
+       "value": 10,
+       "source": "audit"
+      },
+      {
+       "id": "tc.families",
+       "desc": "서체 2종 이하",
+       "metric": "type.families",
+       "op": "<=",
+       "value": 2,
+       "source": "audit"
+      },
+      {
+       "id": "tc.measure_latin",
+       "desc": "라틴 문단 줄 길이 38em 이하(≈75자, Bringhurst 45~75자)",
+       "metric": "type.measure_em_latin",
+       "op": "<=",
+       "value": 38,
+       "source": "audit",
+       "na_ok": true
+      },
+      {
+       "id": "tc.measure_cjk",
+       "desc": "한중일 문단 줄 길이 40em 이하(WCAG 1.4.8 AAA의 CJK 40자 기준을 폭으로 옮긴 값)",
+       "metric": "type.measure_em_cjk",
+       "op": "<=",
+       "value": 40,
+       "source": "audit",
+       "na_ok": true
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "브랜드 일관",
+     "summary": "판정단 타이포·색 4점 이상 · 크기 단계 8개 이하",
+     "checks": [
+      {
+       "id": "tc.steps",
+       "desc": "글자 크기 단계 8개 이하",
+       "metric": "type.size_steps",
+       "op": "<=",
+       "value": 8,
+       "source": "audit"
+      },
+      {
+       "id": "tc.panel",
+       "desc": "블라인드 판정단 '타이포·색' 중앙값 4 이상",
+       "metric": "panel.axis.typography_color.ours",
+       "op": ">=",
+       "value": 4,
+       "source": "panel"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "최상",
+     "summary": "본문 대비 7:1(AAA) · 판정단 4.5 이상",
+     "checks": [
+      {
+       "id": "tc.aaa",
+       "desc": "보통 글자 대비 최소 7:1(WCAG 1.4.6 AAA)",
+       "metric": "contrast.normal_min",
+       "op": ">=",
+       "value": 7,
+       "source": "audit"
+      },
+      {
+       "id": "tc.panel",
+       "desc": "블라인드 판정단 '타이포·색' 중앙값 4.5 이상",
+       "metric": "panel.axis.typography_color.ours",
+       "op": ">=",
+       "value": 4.5,
+       "source": "panel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "imagery",
+   "header": "이미지",
+   "question": "이미지·그래픽(자체 그림·제품 화면·아이콘)은 어느 수준까지 갖출까요?",
+   "levels": [
+    {
+     "level": 1,
+     "label": "깨짐 없음",
+     "summary": "깨진 그림 0 · 대체 글자 누락 0",
+     "checks": [
+      {
+       "id": "img.broken",
+       "desc": "깨진 그림 0",
+       "metric": "img.broken",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "img.alt",
+       "desc": "alt 속성 없는 그림 0(장식은 alt=\"\")",
+       "metric": "img.alt_missing",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "최적화·자체 그림",
+     "summary": "AVIF/WebP/SVG · 크기 지정 · 스톡 아닌 그래픽",
+     "checks": [
+      {
+       "id": "img.dims",
+       "desc": "width·height 지정 안 된 그림 0(레이아웃 이동 방지)",
+       "metric": "img.no_dimensions",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "img.format",
+       "desc": "100px 넘는 래스터는 AVIF·WebP만(PNG·JPG·GIF 0)",
+       "metric": "img.legacy_format",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "img.custom",
+       "desc": "핵심 절마다 일반 스톡이 아닌 그래픽(자체 그림·제품 화면 조각·다이어그램)",
+       "metric": "img.custom_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "아트 디렉션",
+     "summary": "판정단 이미지 4점 이상 · 생성 그림 티 점검",
+     "checks": [
+      {
+       "id": "img.panel",
+       "desc": "블라인드 판정단 '이미지·그래픽' 중앙값 4 이상",
+       "metric": "panel.axis.imagery.ours",
+       "op": ">=",
+       "value": 4,
+       "source": "panel"
+      },
+      {
+       "id": "img.ai_tell",
+       "desc": "생성 그림 티(글자 깨짐·손·과한 광택·무의미한 장식) 점검 통과 — 독립 검증",
+       "metric": "img.ai_tell_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "시그니처 그래픽",
+     "summary": "판정단 이미지 4.5 이상",
+     "checks": [
+      {
+       "id": "img.panel",
+       "desc": "블라인드 판정단 '이미지·그래픽' 중앙값 4.5 이상",
+       "metric": "panel.axis.imagery.ours",
+       "op": ">=",
+       "value": 4.5,
+       "source": "panel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "motion",
+   "header": "모션·효과",
+   "question": "모션·상호작용(호버·전환·스크롤 효과·감속 대응)은 어느 수준까지 할까요?",
+   "levels": [
+    {
+     "level": 1,
+     "label": "상태·감속 대응",
+     "summary": "초점 스타일 · prefers-reduced-motion · 자동 움직임 정지",
+     "checks": [
+      {
+       "id": "mo.reduced",
+       "desc": "prefers-reduced-motion 대응 규칙이 있다",
+       "metric": "motion.reduced_rule",
+       "op": "true",
+       "value": true,
+       "source": "audit"
+      },
+      {
+       "id": "mo.focus",
+       "desc": ":focus/:focus-visible 스타일 규칙이 있다",
+       "metric": "focus.rule",
+       "op": "true",
+       "value": true,
+       "source": "audit"
+      },
+      {
+       "id": "mo.pause",
+       "desc": "5초 넘게 스스로 움직이는 요소에 정지 수단(WCAG 2.2.2) — 없으면 N/A로 증거 기록",
+       "metric": "motion.pause_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "모션 체계",
+     "summary": "레이아웃 속성 애니메이션 0 · 시간·이징 토큰",
+     "checks": [
+      {
+       "id": "mo.layout",
+       "desc": "width·height·top·margin 등 레이아웃 속성 전환 0(transform·opacity만)",
+       "metric": "motion.layout_anim",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "mo.tokens",
+       "desc": "시간·이징 값이 토큰 한 곳에서 나온다",
+       "metric": "motion.tokens_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "정교한 상호작용",
+     "summary": "모션 감사 High 0 · 페르소나 High 0",
+     "checks": [
+      {
+       "id": "mo.audit",
+       "desc": "모션 전수 감사(improve-animations 등) High 0 — 감사 보고서 증거",
+       "metric": "motion.audit_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      },
+      {
+       "id": "mo.persona",
+       "desc": "페르소나(디자인 전문가 포함) High 지적 미해결 0",
+       "metric": "persona.open_high",
+       "op": "==",
+       "value": 0,
+       "source": "persona"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "시그니처 인터랙션",
+     "summary": "기억에 남는 상호작용 1개 이상(감속 모드 대체 포함)",
+     "checks": [
+      {
+       "id": "mo.signature",
+       "desc": "기억에 남는 상호작용 1개 이상, 감속 모드에서 대체 표현 — 녹화 증거",
+       "metric": "motion.signature_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "responsive",
+   "header": "반응형",
+   "question": "반응형·모바일은 어느 폭까지, 어느 수준까지 맞출까요?",
+   "levels": [
+    {
+     "level": 1,
+     "label": "2폭 무결",
+     "summary": "375·1280에서 넘침 0 · 누를 것 24px 이상",
+     "widths": [
+      375,
+      1280
+     ],
+     "checks": [
+      {
+       "id": "rs.overflow",
+       "desc": "모든 대상 폭에서 가로 넘침 0px",
+       "metric": "overflow.px",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "rs.target24",
+       "desc": "누를 수 있는 것 24×24px 이상(WCAG 2.5.8, 문장 속 링크 제외)",
+       "metric": "target.small24",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "6폭 무결",
+     "summary": "320~1440 6폭 · 버튼 44px · 200% 확대",
+     "widths": [
+      320,
+      375,
+      768,
+      1024,
+      1280,
+      1440
+     ],
+     "checks": [
+      {
+       "id": "rs.button44",
+       "desc": "버튼 44×44px 이상",
+       "metric": "target.button_lt44",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "rs.zoom200",
+       "desc": "200% 확대에서 잘림·겹침 0(WCAG 1.4.4) — 캡처 증거",
+       "metric": "resp.zoom200_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "모바일 설계",
+     "summary": "판정단 모바일 4점 이상 · 텍스트 간격 덮어쓰기 통과",
+     "widths": [
+      320,
+      375,
+      768,
+      1024,
+      1280,
+      1440
+     ],
+     "checks": [
+      {
+       "id": "rs.panel",
+       "desc": "블라인드 판정단 '모바일 화면' 중앙값 4 이상",
+       "metric": "panel.axis.mobile.ours",
+       "op": ">=",
+       "value": 4,
+       "source": "panel"
+      },
+      {
+       "id": "rs.spacing",
+       "desc": "텍스트 간격 덮어쓰기(WCAG 1.4.12)에서 잘림 0 — 캡처 증거",
+       "metric": "resp.text_spacing_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "전 폭 최상",
+     "summary": "2560 초광폭 추가 · 판정단 모바일 4.5",
+     "widths": [
+      320,
+      375,
+      768,
+      1024,
+      1280,
+      1440,
+      2560
+     ],
+     "checks": [
+      {
+       "id": "rs.panel",
+       "desc": "블라인드 판정단 '모바일 화면' 중앙값 4.5 이상",
+       "metric": "panel.axis.mobile.ours",
+       "op": ">=",
+       "value": 4.5,
+       "source": "panel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a11y",
+   "header": "접근성",
+   "question": "접근성은 어느 수준까지 맞출까요?",
+   "levels": [
+    {
+     "level": 1,
+     "label": "자동 검사 통과",
+     "summary": "axe 심각·치명 0 · 언어·main 랜드마크",
+     "checks": [
+      {
+       "id": "a11y.axe_serious",
+       "desc": "axe serious·critical 위반 0(대상 전부)",
+       "metric": "axe.serious_critical",
+       "op": "==",
+       "value": 0,
+       "source": "axe",
+       "requires": [
+        "runqa"
+       ]
+      },
+      {
+       "id": "a11y.lang",
+       "desc": "html lang 속성",
+       "metric": "struct.lang",
+       "op": "true",
+       "value": true,
+       "source": "audit"
+      },
+      {
+       "id": "a11y.main",
+       "desc": "페이지마다 main 랜드마크",
+       "metric": "struct.main",
+       "op": ">=",
+       "value": 1,
+       "source": "audit"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "AA 실사용",
+     "summary": "axe 전 위반 0 · 키보드만으로 핵심 여정",
+     "checks": [
+      {
+       "id": "a11y.axe_all",
+       "desc": "axe 위반 0(모든 등급)",
+       "metric": "axe.violations",
+       "op": "==",
+       "value": 0,
+       "source": "axe",
+       "requires": [
+        "runqa"
+       ]
+      },
+      {
+       "id": "a11y.keyboard",
+       "desc": "키보드만으로 핵심 여정 완주(초점 순서·표시) — 실측 기록",
+       "metric": "a11y.keyboard_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "AA 전수",
+     "summary": "WCAG 2.2 AA 수동 점검표 · 스크린리더 여정",
+     "checks": [
+      {
+       "id": "a11y.checklist",
+       "desc": "WCAG 2.2 AA 수동 점검표(1.4.10·1.4.11·1.4.12·2.4.11·2.5.8·2.2.2) 통과 기록",
+       "metric": "a11y.checklist_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      },
+      {
+       "id": "a11y.sr",
+       "desc": "스크린리더(VoiceOver·NVDA)로 핵심 여정 완주 기록",
+       "metric": "a11y.screenreader_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "AAA 지향",
+     "summary": "본문 대비 7:1 · 초점 외관(2.4.13)",
+     "checks": [
+      {
+       "id": "a11y.aaa_contrast",
+       "desc": "보통 글자 대비 최소 7:1",
+       "metric": "contrast.normal_min",
+       "op": ">=",
+       "value": 7,
+       "source": "audit"
+      },
+      {
+       "id": "a11y.focus_appearance",
+       "desc": "초점 표시 2px 이상·대비 3:1(WCAG 2.4.13) 기록",
+       "metric": "a11y.focus_appearance_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "perf",
+   "header": "성능",
+   "question": "성능(로딩·레이아웃 흔들림·전송량)은 어느 수준까지 맞출까요?",
+   "levels": [
+    {
+     "level": 1,
+     "label": "Good 기준",
+     "summary": "LCP 2.5초·CLS 0.1 이하(Core Web Vitals Good)",
+     "checks": [
+      {
+       "id": "perf.lcp",
+       "desc": "LCP 2,500ms 이하(대상 전부의 최댓값)",
+       "metric": "perf.lcp_ms",
+       "op": "<=",
+       "value": 2500,
+       "source": "audit"
+      },
+      {
+       "id": "perf.cls",
+       "desc": "CLS 0.1 이하",
+       "metric": "perf.cls",
+       "op": "<=",
+       "value": 0.1,
+       "source": "audit"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "여유 있게",
+     "summary": "LCP 2초·CLS 0.05 · DOM 1,400개 이하",
+     "checks": [
+      {
+       "id": "perf.lcp",
+       "desc": "LCP 2,000ms 이하",
+       "metric": "perf.lcp_ms",
+       "op": "<=",
+       "value": 2000,
+       "source": "audit"
+      },
+      {
+       "id": "perf.cls",
+       "desc": "CLS 0.05 이하",
+       "metric": "perf.cls",
+       "op": "<=",
+       "value": 0.05,
+       "source": "audit"
+      },
+      {
+       "id": "perf.dom",
+       "desc": "DOM 요소 1,400개 이하",
+       "metric": "dom.nodes",
+       "op": "<=",
+       "value": 1400,
+       "source": "audit"
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "빠름",
+     "summary": "LCP 1.5초·CLS 0.02 · JS 150KB 이하",
+     "checks": [
+      {
+       "id": "perf.lcp",
+       "desc": "LCP 1,500ms 이하",
+       "metric": "perf.lcp_ms",
+       "op": "<=",
+       "value": 1500,
+       "source": "audit"
+      },
+      {
+       "id": "perf.cls",
+       "desc": "CLS 0.02 이하",
+       "metric": "perf.cls",
+       "op": "<=",
+       "value": 0.02,
+       "source": "audit"
+      },
+      {
+       "id": "perf.js",
+       "desc": "페이지당 스크립트 전송량 150KB 이하",
+       "metric": "perf.js_kb",
+       "op": "<=",
+       "value": 150,
+       "source": "audit"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "최상",
+     "summary": "LCP 1.2초 · 전체 전송량 1MB 이하",
+     "checks": [
+      {
+       "id": "perf.lcp",
+       "desc": "LCP 1,200ms 이하",
+       "metric": "perf.lcp_ms",
+       "op": "<=",
+       "value": 1200,
+       "source": "audit"
+      },
+      {
+       "id": "perf.transfer",
+       "desc": "페이지당 전체 전송량 1,000KB 이하",
+       "metric": "perf.transfer_kb",
+       "op": "<=",
+       "value": 1000,
+       "source": "audit"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "content",
+   "header": "문구·신뢰",
+   "question": "문구·콘텐츠·신뢰 장치는 어느 수준까지 다듬을까요?",
+   "levels": [
+    {
+     "level": 1,
+     "label": "결함 없음",
+     "summary": "자리표시 0 · 근거 없는 주장 0",
+     "checks": [
+      {
+       "id": "ct.placeholder",
+       "desc": "자리표시·임시 문구(lorem·TODO·undefined 등) 0",
+       "metric": "text.placeholder",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      },
+      {
+       "id": "ct.claims",
+       "desc": "근거 없는 주장 0(가짜 수치·고객 로고·후기·순위) — 독립 검증",
+       "metric": "content.claims_ok",
+       "op": "true",
+       "value": true,
+       "source": "manual"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "명확한 행동",
+     "summary": "'자세히'·'더 보기' 단독 링크 0",
+     "checks": [
+      {
+       "id": "ct.generic_links",
+       "desc": "결과를 말하지 않는 링크·버튼 이름('자세히'·'더 보기'·'Learn more' 단독) 0",
+       "metric": "text.generic_links",
+       "op": "==",
+       "value": 0,
+       "source": "audit"
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "설득력",
+     "summary": "판정단 문구·신뢰 4점 이상 · 페르소나 막힘 0",
+     "checks": [
+      {
+       "id": "ct.panel_copy",
+       "desc": "블라인드 판정단 '문구 명확성' 중앙값 4 이상",
+       "metric": "panel.axis.copy.ours",
+       "op": ">=",
+       "value": 4,
+       "source": "panel"
+      },
+      {
+       "id": "ct.panel_trust",
+       "desc": "블라인드 판정단 '신뢰 장치' 중앙값 4 이상",
+       "metric": "panel.axis.trust.ours",
+       "op": ">=",
+       "value": 4,
+       "source": "panel"
+      },
+      {
+       "id": "ct.persona",
+       "desc": "페르소나 High 지적 미해결 0",
+       "metric": "persona.open_high",
+       "op": "==",
+       "value": 0,
+       "source": "persona"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "최상",
+     "summary": "판정단 문구·신뢰 4.5 이상",
+     "checks": [
+      {
+       "id": "ct.panel_copy",
+       "desc": "블라인드 판정단 '문구 명확성' 중앙값 4.5 이상",
+       "metric": "panel.axis.copy.ours",
+       "op": ">=",
+       "value": 4.5,
+       "source": "panel"
+      },
+      {
+       "id": "ct.panel_trust",
+       "desc": "블라인드 판정단 '신뢰 장치' 중앙값 4.5 이상",
+       "metric": "panel.axis.trust.ours",
+       "op": ">=",
+       "value": 4.5,
+       "source": "panel"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "competitive",
+   "header": "경쟁 우위",
+   "question": "경쟁사 대비 어느 위치를 목표로 할까요? (블라인드 판정단이 같은 폭 캡처로 채점)",
+   "levels": [
+    {
+     "level": 1,
+     "label": "근접",
+     "summary": "어느 축도 경쟁사 중앙값보다 1점 넘게 낮지 않음",
+     "checks": [
+      {
+       "id": "cp.near",
+       "desc": "모든 축에서 (우리 − 경쟁사 중앙값) ≥ −1",
+       "metric": "panel.vs_median.min_diff",
+       "op": ">=",
+       "value": -1,
+       "source": "panel"
+      }
+     ]
+    },
+    {
+     "level": 2,
+     "label": "동급",
+     "summary": "모든 축에서 경쟁사 중앙값 이상",
+     "checks": [
+      {
+       "id": "cp.near",
+       "desc": "모든 축에서 (우리 − 경쟁사 중앙값) ≥ 0",
+       "metric": "panel.vs_median.min_diff",
+       "op": ">=",
+       "value": 0,
+       "source": "panel"
+      }
+     ]
+    },
+    {
+     "level": 3,
+     "label": "우위",
+     "summary": "경쟁사마다 축 2/3 이상 승·패배 0·평균 격차 0.75",
+     "checks": [
+      {
+       "id": "cp.wins",
+       "desc": "경쟁사마다 축의 2/3 이상에서 중앙값 승",
+       "metric": "panel.vs.min_wins_ratio",
+       "op": ">=",
+       "value": 0.667,
+       "source": "panel"
+      },
+      {
+       "id": "cp.losses",
+       "desc": "어느 경쟁사에도 지는 축 0",
+       "metric": "panel.vs.max_losses",
+       "op": "==",
+       "value": 0,
+       "source": "panel"
+      },
+      {
+       "id": "cp.gap",
+       "desc": "경쟁사마다 평균 격차 0.75점 이상",
+       "metric": "panel.vs.min_mean_gap",
+       "op": ">=",
+       "value": 0.75,
+       "source": "panel"
+      }
+     ]
+    },
+    {
+     "level": 4,
+     "label": "압도",
+     "summary": "모든 축 승 · 우리 최저 축 4.5 이상",
+     "checks": [
+      {
+       "id": "cp.wins",
+       "desc": "경쟁사마다 모든 축에서 중앙값 승",
+       "metric": "panel.vs.min_wins_ratio",
+       "op": ">=",
+       "value": 1,
+       "source": "panel"
+      },
+      {
+       "id": "cp.floor",
+       "desc": "우리 사이트의 가장 낮은 축 중앙값 4.5 이상",
+       "metric": "panel.ours_min",
+       "op": ">=",
+       "value": 4.5,
+       "source": "panel"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "presets": {
+  "basic": {
+   "label": "기본(출시 최소)",
+   "summary": "모든 차원 L1 — 결함 없는 출시 최소선",
+   "levels": {
+    "visual": 1,
+    "type_color": 1,
+    "imagery": 1,
+    "motion": 1,
+    "responsive": 1,
+    "a11y": 1,
+    "perf": 1,
+    "content": 1,
+    "competitive": 1
+   }
+  },
+  "production": {
+   "label": "프로덕션",
+   "summary": "대부분 L2 — 체계·실사용 접근성·경쟁사 동급",
+   "levels": {
+    "visual": 2,
+    "type_color": 2,
+    "imagery": 2,
+    "motion": 1,
+    "responsive": 2,
+    "a11y": 2,
+    "perf": 2,
+    "content": 2,
+    "competitive": 2
+   }
+  },
+  "leading": {
+   "label": "경쟁 우위",
+   "summary": "핵심 L3 — 판정단 4점·경쟁사마다 우위",
+   "levels": {
+    "visual": 3,
+    "type_color": 3,
+    "imagery": 3,
+    "motion": 2,
+    "responsive": 3,
+    "a11y": 2,
+    "perf": 2,
+    "content": 3,
+    "competitive": 3
+   }
+  },
+  "award": {
+   "label": "최상(수상 지향)",
+   "summary": "L4 중심 — 판정단 4.5·모든 축 승",
+   "levels": {
+    "visual": 4,
+    "type_color": 4,
+    "imagery": 4,
+    "motion": 4,
+    "responsive": 3,
+    "a11y": 3,
+    "perf": 3,
+    "content": 4,
+    "competitive": 4
+   }
+  }
+ },
+ "rigor": {
+  "light": {
+   "label": "가볍게",
+   "judges": 1,
+   "cross_vendor": false,
+   "personas": 0,
+   "criteria": [
+    {
+     "id": "rg.judges",
+     "desc": "판정자 1명 이상",
+     "metric": "panel.judges",
+     "op": ">=",
+     "value": 1,
+     "source": "panel"
+    }
+   ],
+   "quorum": 1
+  },
+  "standard": {
+   "label": "표준",
+   "judges": 4,
+   "cross_vendor": true,
+   "personas": 3,
+   "criteria": [
+    {
+     "id": "rg.judges",
+     "desc": "판정자 4명 이상(Claude 3 + 다른 벤더 1)",
+     "metric": "panel.judges",
+     "op": ">=",
+     "value": 4,
+     "source": "panel"
+    },
+    {
+     "id": "rg.vendor",
+     "desc": "다른 벤더 판정자 1명 이상",
+     "metric": "panel.cross_vendor",
+     "op": ">=",
+     "value": 1,
+     "source": "panel"
+    },
+    {
+     "id": "rg.personas",
+     "desc": "페르소나 3명 이상(기업 담당자·실사용자·디자인 전문가 등)",
+     "metric": "persona.count",
+     "op": ">=",
+     "value": 3,
+     "source": "persona"
+    }
+   ],
+   "quorum": 3
+  },
+  "strict": {
+   "label": "엄격",
+   "judges": 6,
+   "cross_vendor": true,
+   "personas": 3,
+   "criteria": [
+    {
+     "id": "rg.judges",
+     "desc": "판정자 6명 이상(Claude 5 + 다른 벤더 1, 순서 바꿔 두 번)",
+     "metric": "panel.judges",
+     "op": ">=",
+     "value": 6,
+     "source": "panel"
+    },
+    {
+     "id": "rg.vendor",
+     "desc": "다른 벤더 판정자 1명 이상",
+     "metric": "panel.cross_vendor",
+     "op": ">=",
+     "value": 1,
+     "source": "panel"
+    },
+    {
+     "id": "rg.personas",
+     "desc": "페르소나 3명 이상",
+     "metric": "persona.count",
+     "op": ">=",
+     "value": 3,
+     "source": "persona"
+    },
+    {
+     "id": "rg.final",
+     "desc": "최종 독립 검증 2인(Claude critic + 다른 벤더) 보고서",
+     "metric": "rigor.final_ok",
+     "op": "true",
+     "value": true,
+     "source": "manual"
+    },
+    {
+     "id": "rg.pair_losses",
+     "desc": "맞비교(좌우 바꿔 두 번)에서 어느 경쟁사에도 지는 축 0",
+     "metric": "panel.pair.max_losses",
+     "op": "==",
+     "value": 0,
+     "source": "panel"
+    }
+   ],
+   "quorum": 5,
+   "pair_quorum": 3
+  },
+  "standard_same": {
+   "label": "표준(동종)",
+   "judges": 3,
+   "cross_vendor": false,
+   "personas": 3,
+   "quorum": 3,
+   "criteria": [
+    {
+     "id": "rg.judges",
+     "desc": "판정자 3명 이상(같은 벤더 — 다른 벤더 판정석이 없는 환경)",
+     "metric": "panel.judges",
+     "op": ">=",
+     "value": 3,
+     "source": "panel"
+    },
+    {
+     "id": "rg.personas",
+     "desc": "페르소나 3명 이상",
+     "metric": "persona.count",
+     "op": ">=",
+     "value": 3,
+     "source": "persona"
+    }
+   ]
+  }
+ },
+ "fixed_questions": {
+  "scope": [
+   {
+    "key": "target",
+    "header": "대상 범위",
+    "question": "이번 고도화의 대상 범위는 어디까지인가요?",
+    "multiSelect": false,
+    "recommended": "journey",
+    "options": [
+     {
+      "label": "대표 페이지 1개",
+      "value": "single",
+      "description": "홈 등 한 페이지에 집중 — 빠르게 기준을 세울 때"
+     },
+     {
+      "label": "핵심 여정",
+      "value": "journey",
+      "description": "진입 → 이해 → 전환(가입·문의·구매)까지 이어지는 페이지들"
+     },
+     {
+      "label": "공개 페이지 전체",
+      "value": "public",
+      "description": "로그인 없이 보이는 모든 페이지"
+     },
+     {
+      "label": "앱 화면까지",
+      "value": "all",
+      "description": "공개 페이지 + 로그인 뒤 앱 화면 전체"
+     }
+    ]
+   },
+   {
+    "key": "depth",
+    "header": "변경 깊이",
+    "question": "디자인을 얼마나 깊게 바꿔도 될까요?",
+    "multiSelect": false,
+    "recommended": "redesign",
+    "options": [
+     {
+      "label": "다듬기",
+      "value": "polish",
+      "description": "구조·문구 유지, 시각·상호작용 품질만 올림"
+     },
+     {
+      "label": "리디자인",
+      "value": "redesign",
+      "description": "캔버스 시안 2~3안 → 선택 → 구현(구조·문구도 바뀜)"
+     },
+     {
+      "label": "디자인 시스템 재정비",
+      "value": "system",
+      "description": "토큰·컴포넌트부터 다시 세우고 전 화면 적용"
+     }
+    ]
+   },
+   {
+    "key": "research",
+    "header": "리서치",
+    "question": "경쟁사·레퍼런스 리서치는 어떻게 할까요?",
+    "multiSelect": false,
+    "recommended": "new_wide",
+    "options": [
+     {
+      "label": "기존 리서치 사용+보강",
+      "value": "reuse",
+      "description": "탐지된 자료를 쓰고 빠진 폭·흐름·오래된 곳만 다시 수집"
+     },
+     {
+      "label": "새로 5곳",
+      "value": "new_5",
+      "description": "직접 경쟁 3 + 디자인 레퍼런스 2"
+     },
+     {
+      "label": "새로 10~15곳",
+      "value": "new_wide",
+      "description": "직접 경쟁·인접 서비스·같은 분야 수상작까지"
+     },
+     {
+      "label": "직접 지정",
+      "value": "custom",
+      "description": "기타를 골라 비교할 사이트 목록을 입력해 주시면 그 목록으로"
+     }
+    ]
+   },
+   {
+    "key": "mode",
+    "header": "기준 설정",
+    "question": "완성도 기준을 어떻게 정할까요?",
+    "multiSelect": false,
+    "recommended": "detail",
+    "options": [
+     {
+      "label": "항목별 세부 선택",
+      "value": "detail",
+      "description": "8개 차원을 하나씩 — 질문 두 번 더(차원당 4수준, 검사 항목 미리보기)"
+     },
+     {
+      "label": "묶음으로 한 번에",
+      "value": "preset",
+      "description": "기본·프로덕션·경쟁 우위·최상 중 하나"
+     },
+     {
+      "label": "권장값으로 진행",
+      "value": "recommended",
+      "description": "프로덕션 묶음을 그대로 쓰고 과정 질문만"
+     }
+    ]
+   }
+  ],
+  "process": [
+   {
+    "dimension": "competitive",
+    "question": "경쟁사 대비 어느 위치를 목표로 할까요? (블라인드 판정단이 같은 폭 캡처로 채점)"
+   },
+   {
+    "key": "rigor",
+    "header": "판정 엄격도",
+    "question": "평가는 얼마나 엄격하게 할까요?",
+    "multiSelect": false,
+    "recommended": "standard",
+    "options": [
+     {
+      "label": "가볍게",
+      "value": "light",
+      "description": "판정자 1명 + 자동 측정 — 빠르지만 편향에 약함"
+     },
+     {
+      "label": "표준",
+      "value": "standard",
+      "description": "Claude 판정자 3 + 다른 벤더 1(블라인드) + 페르소나 3"
+     },
+     {
+      "label": "엄격",
+      "value": "strict",
+      "description": "판정자 5 + 다른 벤더 1, 순서 바꿔 두 번 + 최종 독립 검증 2인"
+     },
+     {
+      "label": "표준(동종)",
+      "value": "standard_same",
+      "description": "판정자 3명(같은 벤더)·페르소나 3명 — 다른 벤더 판정석이 없는 환경용"
+     }
+    ]
+   },
+   {
+    "key": "round_cap",
+    "header": "반복 한도",
+    "question": "기준에 못 미치면 최대 몇 회차까지 돌릴까요? (기준선 r0 포함 — 한도에 닿으면 멈추고 여쭙니다)",
+    "multiSelect": false,
+    "recommended": 6,
+    "options": [
+     {
+      "label": "3회",
+      "value": 3,
+      "description": "짧게 — 기준이 낮거나 다듬기일 때"
+     },
+     {
+      "label": "6회",
+      "value": 6,
+      "description": "리디자인 한 사이클에 보통 충분"
+     },
+     {
+      "label": "10회",
+      "value": 10,
+      "description": "높은 기준·넓은 범위"
+     },
+     {
+      "label": "15회",
+      "value": 15,
+      "description": "최상 기준 — 정체 규칙이 먼저 멈출 수 있음"
+     }
+    ]
+   },
+   {
+    "key": "goal",
+    "header": "goal 방식",
+    "question": "잠근 기준에 goal을 어떻게 걸까요?",
+    "multiSelect": false,
+    "recommended": "AB",
+    "options": [
+     {
+      "label": "기록+멈춤 차단",
+      "value": "AB",
+      "description": "goals.py 단계 기록(재개용) + 네이티브 /goal로 기준 충족 전 멈춤을 막음 — /goal 문구는 직접 입력"
+     },
+     {
+      "label": "goals.py 기록만",
+      "value": "A",
+      "description": "단계 기록·재개용 — 멈춤을 막지 않고 검증 명령을 대신 실행하지 않음"
+     },
+     {
+      "label": "네이티브 /goal만",
+      "value": "B",
+      "description": "멈춤 차단만 — 실행 준비된 /goal 문구를 드리고 입력은 직접"
+     },
+     {
+      "label": "goal 없이",
+      "value": "C",
+      "description": "기록만 — 완료 판정은 여전히 판정 명령 0"
+     }
+    ]
+   }
+  ]
+ },
+ "panel_axis_note": "key.json의 ref:<이름>은 기준점(앵커) 자극으로만 보여 주고 경쟁 지표에는 넣지 않는다"
+}

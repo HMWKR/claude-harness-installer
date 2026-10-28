@@ -1,0 +1,4 @@
+interface:
+  display_name: "What You"
+  short_description: "목적·근거·과정·산출물을 구조화하는 심층 프레임워크"
+  default_prompt: "Use $what-you to derive this request into an evidence-backed purpose, decision trace, execution pipeline, and auditable artifact set."

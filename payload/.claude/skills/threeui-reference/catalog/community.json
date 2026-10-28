@@ -1,0 +1,3275 @@
+{
+ "generatedAt": "2026-10-16",
+ "source": {
+  "sitemap": "https://threeui.com/sitemap.xml",
+  "shaders": "https://raw.githubusercontent.com/MengTo/threeui/main/src/data/shaders.tsx"
+ },
+ "license": "Community code: MIT (github.com/MengTo/threeui) — item attribution/third-party notices stay required",
+ "count": 43,
+ "items": [
+  {
+   "id": "kage-landing-page",
+   "category": "Landing Pages",
+   "url": "https://threeui.com/landing-pages/kage-landing-page",
+   "bundle": "https://threeui.com/source-code/kage-landing-page.json",
+   "label": "Kage",
+   "importName": "KageLandingPage",
+   "runtime": "Full HTML + DOM/CSS + Three.js",
+   "tags": [
+    "landing page",
+    "full html",
+    "website",
+    "kage",
+    "japanese",
+    "temple",
+    "garden",
+    "cinematic",
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "scroll",
+    "night",
+    "lanterns",
+    "sakura",
+    "interactive",
+    "responsive",
+    "dark mode"
+   ],
+   "description": "The complete authored Kage temple experience, preserved as an interactive full-page document with its original navigation, scroll scenes, and local Three.js world.",
+   "interaction": "Original pointer, keyboard, scroll, and navigation interactions",
+   "asset": "Fourteen local WebP scene layers",
+   "sourceCommit": "SHA-256 c8e06b90397a",
+   "sourceFiles": [
+    "src/shaders/landing-pages/LandingPages.tsx",
+    "public/landing-pages/kage.html — complete page with audio removed",
+    "public/landing-pages/secret-pathways-assets/fonts.css",
+    "public/landing-pages/secret-pathways-assets/three.min.js"
+   ],
+   "variants": [],
+   "controls": [
+    "headingFont",
+    "bodyFont",
+    "headingWeight",
+    "bodyWeight",
+    "primaryColor",
+    "headingSize",
+    "bodySize",
+    "headingLetterSpacing"
+   ]
+  },
+  {
+   "id": "complete-shelf-landing-page",
+   "category": "Hero",
+   "url": "https://threeui.com/hero/complete-shelf-landing-page",
+   "bundle": "https://threeui.com/source-code/complete-shelf-landing-page.json",
+   "label": "Complete Shelf",
+   "importName": "CompleteShelfLandingPage",
+   "runtime": "Full HTML + DOM/CSS + Three.js r165",
+   "tags": [
+    "landing page",
+    "full html",
+    "website",
+    "hero",
+    "bookshelf",
+    "books",
+    "working volumes",
+    "editorial",
+    "portfolio",
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "tools",
+    "carousel",
+    "interactive",
+    "responsive"
+   ],
+   "description": "The complete Working Volumes bookshelf page with all seven tools, its responsive editorial interface, and authored Three.js presentation.",
+   "interaction": "Original pointer, keyboard, scroll, navigation, and book interactions",
+   "asset": "All visual and media data remains embedded in the original HTML",
+   "sourceCommit": "SHA-256 606f200fed86",
+   "sourceFiles": [
+    "src/shaders/landing-pages/LandingPages.tsx",
+    "public/landing-pages/complete-shelf-v2.html — byte-exact complete page"
+   ],
+   "variants": [],
+   "controls": [
+    "headingFont",
+    "bodyFont",
+    "headingWeight",
+    "bodyWeight",
+    "primaryColor",
+    "headingSize",
+    "bodySize",
+    "headingLetterSpacing"
+   ]
+  },
+  {
+   "id": "bestsellers-book-showcase",
+   "category": "Hero",
+   "url": "https://threeui.com/hero/bestsellers-book-showcase",
+   "bundle": "https://threeui.com/source-code/bestsellers-book-showcase.json",
+   "label": "Bestsellers Book Showcase",
+   "importName": "BestsellersBookShowcase",
+   "runtime": "Full HTML + DOM/CSS + embedded media",
+   "tags": [
+    "landing page",
+    "full html",
+    "website",
+    "hero",
+    "books",
+    "bestsellers",
+    "field manuals",
+    "editorial",
+    "showcase",
+    "typography",
+    "video",
+    "media",
+    "scroll",
+    "interactive",
+    "responsive"
+   ],
+   "description": "The complete Field Manuals book showcase, preserved unchanged with its editorial layout, authored motion, interactions, and embedded media.",
+   "interaction": "Original pointer, keyboard, scroll, navigation, and showcase interactions",
+   "asset": "All visual and video data remains embedded in the original HTML",
+   "sourceCommit": "SHA-256 7c1ed1ca4a4c",
+   "sourceFiles": [
+    "src/shaders/landing-pages/LandingPages.tsx",
+    "public/landing-pages/bestsellers-book-showcase.html — byte-exact complete page"
+   ],
+   "variants": [],
+   "controls": [
+    "headingFont",
+    "bodyFont",
+    "headingWeight",
+    "bodyWeight",
+    "primaryColor",
+    "headingSize",
+    "bodySize",
+    "headingLetterSpacing"
+   ]
+  },
+  {
+   "id": "sylva-hero",
+   "category": "Hero",
+   "url": "https://threeui.com/hero/sylva-hero",
+   "bundle": "https://threeui.com/source-code/sylva-hero.json",
+   "label": "Sylva",
+   "importName": "SylvaHero",
+   "runtime": "Full HTML + DOM/CSS + local Three.js",
+   "tags": [
+    "landing page",
+    "full html",
+    "website",
+    "hero",
+    "sylva",
+    "living world",
+    "nature",
+    "moss",
+    "forest",
+    "roots",
+    "green",
+    "organic",
+    "growth",
+    "liquid metal",
+    "button",
+    "cta",
+    "cards",
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "glsl",
+    "shader",
+    "procedural",
+    "dusk",
+    "dark mode",
+    "pointer",
+    "interactive",
+    "responsive"
+   ],
+   "description": "The complete Sylva Living Green page, preserved with its Three.js scene, local typography, card imagery, and embedded liquid-metal buttons. The moss-root world with pale flowers, ferns, drifting pollen, the landing butterfly, and native liquid-metal controls behind the full hero layout.",
+   "interaction": "Original pointer, hover, scroll, and responsive scaling",
+   "asset": "Four local assets are packaged at their authored relative paths; the page makes no external request",
+   "sourceCommit": "SHA-256 05f359ce157a",
+   "sourceFiles": [
+    "src/shaders/landing-pages/LandingPages.tsx",
+    "public/landing-pages/inner-green-3d.html — complete page with native controls"
+   ],
+   "variants": [
+    {
+     "id": "living-green",
+     "label": "Living Green",
+     "description": "The moss-root world with pale flowers, ferns, drifting pollen, the landing butterfly, and native liquid-metal controls behind the full hero layout.",
+     "url": "https://threeui.com/hero/sylva-hero/living-green"
+    }
+   ],
+   "controls": [
+    "headingFont",
+    "bodyFont",
+    "headingWeight",
+    "bodyWeight",
+    "primaryColor",
+    "headingSize",
+    "bodySize",
+    "headingLetterSpacing"
+   ]
+  },
+  {
+   "id": "meng-to-sketchbook-landing-page",
+   "category": "Landing Pages",
+   "url": "https://threeui.com/landing-pages/meng-to-sketchbook-landing-page",
+   "bundle": "https://threeui.com/source-code/meng-to-sketchbook-landing-page.json",
+   "label": "Sketchbook",
+   "importName": "MengToSketchbookLandingPage",
+   "runtime": "Full HTML + DOM/CSS + JavaScript",
+   "tags": [
+    "landing page",
+    "full html",
+    "website",
+    "meng to",
+    "portfolio",
+    "personal",
+    "sketchbook",
+    "singapore",
+    "illustration",
+    "editorial",
+    "paper",
+    "botanical",
+    "page turn",
+    "page curl",
+    "magnifier",
+    "zoom",
+    "drag",
+    "pointer tilt",
+    "typography",
+    "instrument serif",
+    "newsreader",
+    "local assets",
+    "light mode",
+    "pointer",
+    "scroll",
+    "keyboard",
+    "interactive",
+    "responsive"
+   ],
+   "description": "A tactile personal portfolio built as a Singapore sketchbook, with nine illustrated plates, curled page turns, a draggable magnifying glass, zoom controls, a botanical paper atmosphere, and an editorial index.",
+   "interaction": "Original page turns, pointer tilt, draggable magnifier, zoom controls, navigation, scroll, keyboard, and responsive layout",
+   "asset": "Fourteen local paper, botanical, and Singapore illustration images plus three local variable and display fonts",
+   "sourceCommit": "SHA-256 e0330548b1ac",
+   "sourceFiles": [
+    "src/shaders/landing-pages/LandingPages.tsx",
+    "src/shaders/landing-pages/pageTypography.ts",
+    "src/shaders/landing-pages/pageRecipes.ts",
+    "public/landing-pages/meng-to-sketchbook.html — byte-exact complete page",
+    "public/landing-pages/meng-to-sketchbook/ — 17 local image and font assets"
+   ],
+   "variants": [],
+   "controls": [
+    "headingFont",
+    "bodyFont",
+    "headingWeight",
+    "bodyWeight",
+    "primaryColor",
+    "headingSize",
+    "bodySize",
+    "headingLetterSpacing"
+   ]
+  },
+  {
+   "id": "predictive-arc",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/predictive-arc",
+   "bundle": "https://threeui.com/source-code/predictive-arc.json",
+   "label": "Predictive Arc",
+   "importName": "PredictiveArcCanvas",
+   "runtime": "Canvas 2D + Raw WebGL + Three.js r128",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "webgl",
+    "threejs",
+    "three.js",
+    "glsl",
+    "shader",
+    "background",
+    "pixels",
+    "pixel art",
+    "pixel grid",
+    "arch",
+    "horizon",
+    "violet",
+    "emerald",
+    "glow",
+    "signals",
+    "particles",
+    "network",
+    "pulses",
+    "override grid",
+    "telemetry",
+    "orange",
+    "ribbon",
+    "waves",
+    "dot matrix",
+    "cyan",
+    "indigo",
+    "purple",
+    "void",
+    "transparent",
+    "halftone",
+    "amber",
+    "dots",
+    "flow field",
+    "red",
+    "variants",
+    "light mode",
+    "dark mode",
+    "animated"
+   ],
+   "description": "Eight animated arc, signal, ribbon, void, and halftone scenes collected in one Canvas 2D, raw-WebGL, and Three.js family.",
+   "interaction": "Variant selection plus customizable mode, speed, color, and brightness",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 fa86582fc870",
+   "sourceFiles": [
+    "Axiom---Predictive-Search-Engine (3).html — predictive arc source",
+    "Axiom-Dynamic-Data-Orchestration.html — data pixel arc source",
+    "src/shaders/predictive-arc/predictiveArcRenderer.ts",
+    "src/shaders/data-pixel-arc/dataPixelArcRenderer.ts",
+    "src/shaders/neuform-isolated/sources/signal-particles.html",
+    "src/shaders/neuform-isolated/sources/override-grid.html",
+    "src/shaders/neuform-isolated/NeuformBatchEffects.tsx",
+    "src/shaders/ribbon-field/RibbonFieldBackground.tsx",
+    "src/shaders/ribbon-field/ribbonFieldShaders.ts",
+    "src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx",
+    "src/shaders/neuform-isolated/sources/void-protocol.html",
+    "src/shaders/neuform-isolated/NeuformCraftEffects.tsx",
+    "src/shaders/neuform-isolated/sources/nexus-unified-flow.html",
+    "src/shaders/neuform-isolated/sources/amber-halftone.html",
+    "src/shaders/predictive-arc/PredictiveArcCollection.tsx",
+    "src/shaders/predictive-arc/PredictiveArcCanvas.tsx"
+   ],
+   "variants": [
+    {
+     "id": "predictive",
+     "label": "Predictive Arc",
+     "description": "The violet predictive pixel arch with a luminous animated core.",
+     "url": "https://threeui.com/backgrounds/predictive-arc/predictive"
+    },
+    {
+     "id": "data-pixel",
+     "label": "Data Pixel Arc",
+     "description": "An emerald pixel horizon with an organic breathing band.",
+     "url": "https://threeui.com/backgrounds/predictive-arc/data-pixel"
+    },
+    {
+     "id": "signal-particles",
+     "label": "Signal Particles",
+     "description": "A dark signal-particle field with soft connective pulses.",
+     "url": "https://threeui.com/backgrounds/predictive-arc/signal-particles"
+    },
+    {
+     "id": "override-grid",
+     "label": "Override Grid",
+     "description": "A block-by-block override grid with telemetry-orange accents.",
+     "url": "https://threeui.com/backgrounds/predictive-arc/override-grid"
+    },
+    {
+     "id": "ribbon-field",
+     "label": "Ribbon Field",
+     "description": "A cyan, indigo, and purple WebGL ribbon field resolved through an animated dot matrix.",
+     "url": "https://threeui.com/backgrounds/predictive-arc/ribbon-field"
+    },
+    {
+     "id": "void-field",
+     "label": "Void Field",
+     "description": "A transparent raw-WebGL void field detached from its original article composition.",
+     "url": "https://threeui.com/backgrounds/predictive-arc/void-field"
+    },
+    {
+     "id": "halftone-flow",
+     "label": "Halftone Flow",
+     "description": "A red-orange raw-WebGL flow field resolved through its authored six-pixel halftone matrix.",
+     "url": "https://threeui.com/backgrounds/predictive-arc/halftone-flow"
+    },
+    {
+     "id": "amber-halftone",
+     "label": "Amber Halftone",
+     "description": "An animated amber-to-white Three.js point field on a dark plane.",
+     "url": "https://threeui.com/backgrounds/predictive-arc/amber-halftone"
+    }
+   ],
+   "controls": [
+    "mode",
+    "speed",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "liquid-form",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/liquid-form",
+   "bundle": "https://threeui.com/source-code/liquid-form.json",
+   "label": "Liquid Form",
+   "importName": "LiquidFormBackground",
+   "runtime": "Raw WebGL",
+   "tags": [
+    "webgl",
+    "glsl",
+    "shader",
+    "ray marching",
+    "raymarching",
+    "3d",
+    "liquid",
+    "metallic",
+    "reflections",
+    "pointer",
+    "interactive"
+   ],
+   "description": "A centered silver ray-marched liquid form with authored studio reflections and pointer-responsive camera drift.",
+   "interaction": "Smoothed pointer look-at plus customizable material, morph, and tint",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 acc0cbacb914",
+   "sourceFiles": [
+    "V-E-L-O-X-Quantum-Engineered.html — WebGL background",
+    "src/shaders/liquid-form/liquidFormShaders.ts",
+    "src/shaders/liquid-form/LiquidFormBackground.tsx"
+   ],
+   "variants": [],
+   "controls": [
+    "speed",
+    "morph",
+    "noiseScale",
+    "mouseAmount",
+    "metal",
+    "camera",
+    "tintHue",
+    "tintAmount"
+   ]
+  },
+  {
+   "id": "crt",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/crt",
+   "bundle": "https://threeui.com/source-code/crt.json",
+   "label": "CRT",
+   "importName": "CrtBackground",
+   "runtime": "Raw WebGL + Canvas 2D",
+   "tags": [
+    "webgl",
+    "glsl",
+    "shader",
+    "canvas",
+    "canvas2d",
+    "crt",
+    "terminal",
+    "matrix",
+    "scanlines",
+    "aperture grille",
+    "phosphor",
+    "curvature",
+    "text texture",
+    "retro",
+    "screen",
+    "monitor",
+    "variants",
+    "cinematic",
+    "monotone",
+    "monochrome",
+    "film leader",
+    "academy leader",
+    "countdown",
+    "letterbox",
+    "timecode",
+    "blue screen",
+    "signal fault",
+    "vhs",
+    "static",
+    "glitch",
+    "tracking noise",
+    "dropout",
+    "nintendo",
+    "8-bit",
+    "nes",
+    "pixel art",
+    "pixel font",
+    "sprite",
+    "title screen",
+    "attract mode",
+    "arcade",
+    "game"
+   ],
+   "description": "One sharpened curved-glass CRT tube driving four screens: the Matrix-era boot terminal, a monochrome film leader, a noise-torn blue signal fault, and an 8-bit console title.",
+   "interaction": "Selectable screen style plus customizable boot speed, CRT motion, hue, brightness, and opacity",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 860a1eb1d4c9",
+   "sourceFiles": [
+    "ZION-Construct-Initialization (1).html — complete CRT background",
+    "src/shaders/crt/crtRenderer.ts",
+    "src/shaders/crt/crtShaders.ts",
+    "src/shaders/crt/crtScreens.ts",
+    "src/shaders/crt/CrtBackground.tsx"
+   ],
+   "variants": [
+    {
+     "id": "terminal",
+     "label": "Terminal",
+     "description": "The authored 19-row Zion boot log typing itself onto green phosphor, now resolved at the full backing resolution so the glyph cores stay crisp behind the grille.",
+     "url": "https://threeui.com/backgrounds/crt/terminal"
+    },
+    {
+     "id": "cinematic",
+     "label": "Cinematic",
+     "description": "A monotone academy leader: letterboxed frame, sweeping countdown dial, scrolling film perforations, registration marks, and a running 24 fps timecode graded to pure luminance.",
+     "url": "https://threeui.com/backgrounds/crt/cinematic"
+    },
+    {
+     "id": "blue-screen",
+     "label": "Blue Screen",
+     "description": "A retro signal-fault panel on saturated broadcast blue, torn by shader-side transport noise: per-row jitter, a rolling dropout band, head-switching scramble, and heavy static.",
+     "url": "https://threeui.com/backgrounds/crt/blue-screen"
+    },
+    {
+     "id": "nintendo",
+     "label": "Nintendo",
+     "description": "An 8-bit console title screen drawn on a 320×180 grid with a hand-authored 5×7 pixel font and nearest-neighbour upscale, so every sprite, brick, and letter lands on a hard pixel edge.",
+     "url": "https://threeui.com/backgrounds/crt/nintendo"
+    }
+   ],
+   "controls": [
+    "speed",
+    "typeSpeed",
+    "motion",
+    "hue",
+    "saturation",
+    "brightness",
+    "opacity"
+   ]
+  },
+  {
+   "id": "energy-orb",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/energy-orb",
+   "bundle": "https://threeui.com/source-code/energy-orb.json",
+   "label": "Globe",
+   "importName": "GlobeCollection",
+   "runtime": "Raw WebGL + Canvas 2D",
+   "tags": [
+    "webgl",
+    "glsl",
+    "shader",
+    "canvas",
+    "canvas2d",
+    "3d",
+    "sphere",
+    "orb",
+    "globe",
+    "world",
+    "earth",
+    "constellation",
+    "network",
+    "nodes",
+    "arcs",
+    "flight paths",
+    "fbm",
+    "noise",
+    "smoke",
+    "glow",
+    "stars",
+    "dusk",
+    "monochrome",
+    "pointer",
+    "drag",
+    "inertia",
+    "interactive",
+    "animated",
+    "variants"
+   ],
+   "description": "The original layered FBM energy sphere with translucent rim glow and depth-aware star field.",
+   "interaction": "Pointer-responsive energy sphere with visibility-aware animation and customizable motion, scale, palette, and opacity",
+   "asset": "No runtime assets",
+   "sourceCommit": "SHA-256 03b1b8e2c440 / 3de7fdcb6239 / 7a88f26e4d8",
+   "sourceFiles": [
+    "NXA-Decentralized-AI-Compute-Protocol (2).html — WebGL energy orb",
+    "src/shaders/globe/GlobeCollection.tsx"
+   ],
+   "variants": [
+    {
+     "id": "energy-orb",
+     "label": "Energy Orb",
+     "description": "The original layered FBM energy sphere with translucent rim glow and depth-aware star field.",
+     "url": "https://threeui.com/backgrounds/energy-orb/energy-orb"
+    }
+   ],
+   "controls": [
+    "speed",
+    "scale",
+    "smokeScale",
+    "smokeStrength",
+    "smokeSpeed",
+    "hue",
+    "saturation",
+    "glow",
+    "starDensity",
+    "starSpeed",
+    "starSize",
+    "brightness",
+    "opacity"
+   ]
+  },
+  {
+   "id": "spark-badge",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/spark-badge",
+   "bundle": "https://threeui.com/source-code/spark-badge.json",
+   "label": "Spark Badge",
+   "importName": "SparkBadge",
+   "runtime": "Canvas 2D",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "particles",
+    "badge",
+    "typography",
+    "rain",
+    "sparks",
+    "embers",
+    "curl noise",
+    "interactive"
+   ],
+   "description": "A luminous credential badge held together by curl-noise embers, carved typography, rain occlusion, waterline sparks, and an adaptive particle field.",
+   "interaction": "Live speed, spark, rain, turbulence, and spread controls over the ambient 17-second dissolve/reform cycle",
+   "asset": "One self-contained authored HTML badge scene; no external assets",
+   "sourceCommit": "SHA-256 a8eefdee0d87",
+   "sourceFiles": [
+    "spark-badge.html — complete self-contained Canvas 2D particle scene",
+    "src/shaders/spark-badge/spark-badge.html",
+    "src/shaders/spark-badge/SparkBadge.tsx"
+   ],
+   "variants": [
+    {
+     "id": "badge",
+     "label": "Badge",
+     "description": "The original Codex credential assembled from luminous rain and curl-noise embers.",
+     "url": "https://threeui.com/backgrounds/spark-badge/badge"
+    }
+   ],
+   "controls": [
+    "speed",
+    "particleAmount",
+    "rainAmount",
+    "turbulence",
+    "spread"
+   ]
+  },
+  {
+   "id": "elements",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/elements",
+   "bundle": "https://threeui.com/source-code/elements.json",
+   "label": "Elements",
+   "importName": "ElementsCollection",
+   "runtime": "Raw WebGL2 + Canvas 2D",
+   "tags": [
+    "webgl2",
+    "webgl",
+    "glsl",
+    "shader",
+    "canvas",
+    "canvas2d",
+    "background",
+    "elements",
+    "elemental",
+    "water",
+    "lightning",
+    "fire",
+    "flame",
+    "condensation",
+    "tree",
+    "generative",
+    "branches",
+    "ripples",
+    "refraction",
+    "electric",
+    "embers",
+    "particles",
+    "logo",
+    "mark",
+    "pointer",
+    "interactive",
+    "variants"
+   ],
+   "description": "Water, lightning, fire, condensation, and a painterly generative tree collected as one elemental family across WebGL2 and Canvas 2D.",
+   "interaction": "Variant selection, pointer-reactive marks and tree wind, speed, scale, particles, palette, and opacity",
+   "asset": "Three embedded vector brand paths; no external binary assets",
+   "sourceCommit": "SHA-256 7a6871fe99fa",
+   "sourceFiles": [
+    "elemental-marks.html — complete water, lightning, and fire source",
+    "src/shaders/elements/sources/elemental-marks.html",
+    "src/shaders/elements/ElementsBackground.tsx",
+    "src/shaders/elements/ElementsCollection.tsx",
+    "generative-tree.html — complete authored Canvas 2D renderer",
+    "src/shaders/elements/sources/generative-tree.html",
+    "src/shaders/elements/GenerativeTree.tsx",
+    "src/shaders/condensation/condensationRenderer.ts",
+    "src/shaders/condensation/CondensationBackground.tsx"
+   ],
+   "variants": [
+    {
+     "id": "elemental-water",
+     "label": "Water",
+     "description": "A refracted OpenAI mark beneath pointer-driven circular ripples, cyan depth, and soft suspended particles.",
+     "url": "https://threeui.com/backgrounds/elements/elemental-water"
+    },
+    {
+     "id": "elemental-lightning",
+     "label": "Lightning",
+     "description": "Violet fBm arcs crawl around the Anthropic contour while pointer proximity pulls the storm closer.",
+     "url": "https://threeui.com/backgrounds/elements/elemental-lightning"
+    },
+    {
+     "id": "elemental-flame",
+     "label": "Fire",
+     "description": "Noise-driven flame ribbons and rising embers lick upward from the Claude mark edge.",
+     "url": "https://threeui.com/backgrounds/elements/elemental-flame"
+    },
+    {
+     "id": "condensation",
+     "label": "Condensation",
+     "description": "Transparent droplets grow, merge, fall, and resolve into soft water splash rings.",
+     "url": "https://threeui.com/backgrounds/elements/condensation"
+    },
+    {
+     "id": "generative-tree",
+     "label": "Generative Tree",
+     "description": "A painterly branching tree grows from warm sienna to golden tips, sways with pointer wind, and sheds soft ambient motes.",
+     "url": "https://threeui.com/backgrounds/elements/generative-tree"
+    }
+   ],
+   "controls": [
+    "speed",
+    "size",
+    "particleAmount",
+    "hue",
+    "saturation",
+    "brightness",
+    "opacity"
+   ]
+  },
+  {
+   "id": "typography-vortex",
+   "category": "Text Animation",
+   "url": "https://threeui.com/text-animation/typography-vortex",
+   "bundle": "https://threeui.com/source-code/typography-vortex.json",
+   "label": "Typography Vortex",
+   "importName": "TypographyVortexCanvas",
+   "runtime": "Canvas 2D",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "typography",
+    "text",
+    "vortex",
+    "glyphs",
+    "rings",
+    "particles",
+    "pointer",
+    "click",
+    "interactive",
+    "light mode",
+    "dark mode"
+   ],
+   "description": "Sable’s complete rotating typography vortex with crisp prerendered rings, drifting glyphs, pointer dissolution, particle dust, and click suction — with dark and light surfaces.",
+   "interaction": "Mode, pointer dissolve, ambient dust, click suction, responsive rings, and reduced motion",
+   "asset": "Exact embedded Fragment Mono font extracted from the authored source",
+   "sourceCommit": "5a736cd3c1f6f19802f61ebb10e1701b9f7aa26e",
+   "sourceFiles": [
+    "ascii-page-transition-v1.html — exact right-side typography vortex",
+    "src/shaders/typography-vortex/typographyVortexRenderer.ts",
+    "src/shaders/typography-vortex/TypographyVortexCanvas.tsx",
+    "src/shaders/fonts/fragment-mono.woff2"
+   ],
+   "variants": [],
+   "controls": [
+    "mode",
+    "speed",
+    "ringGrowth",
+    "opacity",
+    "dissolveRadius",
+    "particleAmount",
+    "suctionDuration"
+   ]
+  },
+  {
+   "id": "semantic-bloom",
+   "category": "Text Animation",
+   "url": "https://threeui.com/text-animation/semantic-bloom",
+   "bundle": "https://threeui.com/source-code/semantic-bloom.json",
+   "label": "Semantic Bloom",
+   "importName": "SemanticBloom",
+   "runtime": "Canvas 2D + DOM/CSS",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "css",
+    "dom",
+    "typography",
+    "text animation",
+    "wordmark",
+    "codex",
+    "organic",
+    "semantic",
+    "liquid",
+    "gooey",
+    "particles",
+    "network",
+    "pointer",
+    "interactive",
+    "light mode",
+    "dark mode",
+    "custom text"
+   ],
+   "description": "A customizable Codex wordmark that draws a viscous particle organism toward its letters, illuminating the text as the network searches and reconnects.",
+   "interaction": "Pointer attraction, live text and size controls, synchronized light/dark mode, visibility pausing, and reduced-motion still frame",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 0e48ec9ed2c3",
+   "sourceFiles": [
+    "design-f0ebbe02-7d8a-41fd-9041-a1124185c27b.html — complete Organic Semantic Explorer source",
+    "src/shaders/semantic-bloom/sources/design-f0ebbe02-7d8a-41fd-9041-a1124185c27b.html",
+    "src/shaders/semantic-bloom/SemanticBloom.tsx"
+   ],
+   "variants": [],
+   "controls": [
+    "mode",
+    "text",
+    "size",
+    "opacity"
+   ]
+  },
+  {
+   "id": "globe-study",
+   "category": "Text Animation",
+   "url": "https://threeui.com/text-animation/globe-study",
+   "bundle": "https://threeui.com/source-code/globe-study.json",
+   "label": "Text Path Studies",
+   "importName": "TextPathStudies",
+   "runtime": "Canvas 2D",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "typography",
+    "text path",
+    "text path studies",
+    "3d",
+    "globe",
+    "world map",
+    "sphere",
+    "halftone",
+    "outline",
+    "morphing",
+    "glyphs",
+    "cloth",
+    "ripple",
+    "ball",
+    "drag",
+    "zoom",
+    "markers",
+    "interactive",
+    "variants"
+   ],
+   "description": "Six interactive Canvas 2D typography studies spanning a globe, flowing outlines, morphing glyphs, cloth physics, ripples, and a particle sphere.",
+   "interaction": "Variant-specific drag, zoom, hover, click, morph, cloth, ripple, and particle interactions",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 2e21ae3b77c3 + e5d01ff0fc47",
+   "sourceFiles": [
+    "text-on-a-path-ii.html — FIG 06 Globe, FIG 07 Outline Typeflow, FIG 08 Morphing Glyph Cloud, and FIG 11 Cloth",
+    "text-on-a-path.html — FIG 04 Ripple and FIG 05 Ball",
+    "src/shaders/text-path-studies/TextPathStudies.tsx"
+   ],
+   "variants": [
+    {
+     "id": "globe-study",
+     "label": "Globe Type Study",
+     "description": "A typographic world sphere with drag rotation, wheel zoom, pointer lighting, and click-to-pin markers.",
+     "url": "https://threeui.com/text-animation/globe-study/globe-study"
+    },
+    {
+     "id": "outline-typeflow",
+     "label": "Outline Typeflow",
+     "description": "Letters trace a multi-loop outline with hover acceleration, illumination, and click-burst particles.",
+     "url": "https://threeui.com/text-animation/globe-study/outline-typeflow"
+    },
+    {
+     "id": "morphing-glyph-cloud",
+     "label": "Morphing Glyph Cloud",
+     "description": "A paired glyph field morphs between radial silhouettes with breathing motion, scatter, and pointer repulsion.",
+     "url": "https://threeui.com/text-animation/globe-study/morphing-glyph-cloud"
+    },
+    {
+     "id": "cloth-study",
+     "label": "Cloth",
+     "description": "A Verlet sheet of letters responds to pointer wind and direct grabbing while its live weave deforms every glyph.",
+     "url": "https://threeui.com/text-animation/globe-study/cloth-study"
+    },
+    {
+     "id": "ripple-study",
+     "label": "Ripple",
+     "description": "Clicks send overlapping weighted wavefronts through a seeded 24 × 24 typographic grid.",
+     "url": "https://threeui.com/text-animation/globe-study/ripple-study"
+    },
+    {
+     "id": "ball-study",
+     "label": "Ball",
+     "description": "A depth-sorted glyph sphere accelerates on hover and sheds click-hit letters before regrowing its surface.",
+     "url": "https://threeui.com/text-animation/globe-study/ball-study"
+    }
+   ],
+   "controls": [
+    "mode",
+    "scale",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "gallery-heading",
+   "category": "Text Animation",
+   "url": "https://threeui.com/text-animation/gallery-heading",
+   "bundle": "https://threeui.com/source-code/gallery-heading.json",
+   "label": "Gallery Heading",
+   "importName": "GalleryHeading",
+   "runtime": "Canvas 2D",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "gallery",
+    "flat color",
+    "noise",
+    "grain",
+    "dither",
+    "halftone",
+    "glitch",
+    "carousel",
+    "tiles",
+    "3d",
+    "perspective",
+    "typography",
+    "light mode",
+    "dark mode"
+   ],
+   "description": "An oversized headline ringed by twelve 4:3 plates — one flat colour each, shaded by a procedural noise field rather than a gradient — that hold still until the pointer arrives, then orbit. Four galleries, each with its own field, typography, and direction.",
+   "interaction": "The ring rests until a pointer is over it, then comes up to one orbit every 15 seconds — eased in three galleries, sprung in the matte one — and settles back to a stop on leave",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 8e42d2d5b497",
+   "sourceFiles": [
+    "src/shaders/neuform-isolated/sources/gallery-heading.html",
+    "src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx"
+   ],
+   "variants": [
+    {
+     "id": "rising-diagonal",
+     "label": "Matte Rise",
+     "description": "Muted museum plates under one slow rise of noise, a light sans on wide tracking, and an ascending ring that springs up to speed instead of easing.",
+     "url": "https://threeui.com/text-animation/gallery-heading/rising-diagonal"
+    },
+    {
+     "id": "falling-diagonal",
+     "label": "Glitch Fall",
+     "description": "Broadcast colour torn into flat blocks and slipped rows, with the headline breaking up into two channels over a descending counter-orbit.",
+     "url": "https://threeui.com/text-animation/gallery-heading/falling-diagonal"
+    },
+    {
+     "id": "horizontal-sweep",
+     "label": "Riso Sweep",
+     "description": "Print colour dithered to three tones over a lit corner, scanlines and heavy grain, under an old-style serif standing on a hard offset plate.",
+     "url": "https://threeui.com/text-animation/gallery-heading/horizontal-sweep"
+    },
+    {
+     "id": "vertical-loop",
+     "label": "Halftone Loop",
+     "description": "One ink on one stock, shaded only by the size of the dots on a rotated screen, under a high-contrast didone on a tall reverse loop.",
+     "url": "https://threeui.com/text-animation/gallery-heading/vertical-loop"
+    }
+   ],
+   "controls": [
+    "mode",
+    "font",
+    "weight",
+    "headlineSize",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "star-portal",
+   "category": "Buttons",
+   "url": "https://threeui.com/buttons/star-portal",
+   "bundle": "https://threeui.com/source-code/star-portal.json",
+   "label": "Shader Buttons",
+   "importName": "ShaderButtons",
+   "runtime": "Raw WebGL + Canvas 2D + CSS",
+   "tags": [
+    "webgl",
+    "glsl",
+    "shader",
+    "canvas",
+    "canvas2d",
+    "css",
+    "button",
+    "shader buttons",
+    "cta",
+    "particles",
+    "stars",
+    "pill",
+    "holographic",
+    "ignition",
+    "induction",
+    "plasma",
+    "tactile",
+    "thinking",
+    "uploading",
+    "interactive",
+    "animated",
+    "variants"
+   ],
+   "description": "Six authored shader and canvas button treatments collected into one interactive family.",
+   "interaction": "Variant selection with authored pointer, hover, motion, and palette behavior",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 002199215e12",
+   "sourceFiles": [
+    "src/shaders/shader-buttons/ShaderButtons.tsx",
+    "src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx",
+    "src/shaders/neuform-isolated/sources/imaginie-starfield.html",
+    "src/shaders/neuform-isolated/sources/ignition-terminal.html",
+    "src/shaders/neuform-isolated/sources/valence-core.html",
+    "src/shaders/neuform-isolated/sources/aetheris-labs.html",
+    "src/shaders/neuform-isolated/sources/nexus-tactile.html",
+    "src/shaders/neuform-isolated/sources/thinking-button.html"
+   ],
+   "variants": [
+    {
+     "id": "star-portal",
+     "label": "Star Portal",
+     "description": "Two drifting Canvas 2D star fields with an authored holographic pill button.",
+     "url": "https://threeui.com/buttons/star-portal/star-portal"
+    },
+    {
+     "id": "ignition-button",
+     "label": "Ignition",
+     "description": "A raw-WebGL ambient field with a tactile ignition control.",
+     "url": "https://threeui.com/buttons/star-portal/ignition-button"
+    },
+    {
+     "id": "induction-button",
+     "label": "Induction",
+     "description": "A kinetic ambient field paired with a raw-WebGL induction button.",
+     "url": "https://threeui.com/buttons/star-portal/induction-button"
+    },
+    {
+     "id": "plasma-button",
+     "label": "Plasma",
+     "description": "A deep-blue laboratory field with a luminous plasma control.",
+     "url": "https://threeui.com/buttons/star-portal/plasma-button"
+    },
+    {
+     "id": "tactile-button",
+     "label": "Tactile",
+     "description": "A fluid ambient background with a tactile raw-WebGL button.",
+     "url": "https://threeui.com/buttons/star-portal/tactile-button"
+    },
+    {
+     "id": "thinking-button",
+     "label": "Thinking",
+     "description": "A luminous Canvas 2D trace orbiting a softly raised blue button.",
+     "url": "https://threeui.com/buttons/star-portal/thinking-button"
+    }
+   ],
+   "controls": [
+    "mode",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "rectangle-buttons",
+   "category": "Buttons",
+   "url": "https://threeui.com/buttons/rectangle-buttons",
+   "bundle": "https://threeui.com/source-code/rectangle-buttons.json",
+   "label": "Rectangle Buttons",
+   "importName": "RectangleButtons",
+   "runtime": "DOM + CSS",
+   "tags": [
+    "css",
+    "dom",
+    "button",
+    "cta",
+    "rectangle",
+    "rectangular",
+    "glass",
+    "glassmorphism",
+    "dark glass",
+    "gradient border",
+    "inset arrow chip",
+    "halftone bloom",
+    "aster",
+    "dot border",
+    "technical outline",
+    "launch",
+    "amber",
+    "tactile",
+    "keycap",
+    "arrow pill",
+    "trochil",
+    "attune",
+    "tideform",
+    "understory",
+    "meridian",
+    "halvorsen",
+    "hover",
+    "focus",
+    "press",
+    "light mode",
+    "dark mode",
+    "animated",
+    "variants",
+    "dark pill legacy"
+   ],
+   "description": "Twenty-two authored rectangle-button and animated CTA treatments collected into one family.",
+   "interaction": "Variant selection with authored hover, focus, motion, and palette behavior",
+   "asset": "5 local SF Pro font subsets + 1 authored remote portrait reference",
+   "sourceCommit": "SHA-256 f4f3dd8422cd",
+   "sourceFiles": [
+    "src/shaders/rectangle-buttons/RectangleButtons.tsx",
+    "remote-control.html — shared button treatment",
+    "src/shaders/section-elements/SectionElements.tsx",
+    "src/shaders/section-elements/section-elements.css",
+    "src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx",
+    "src/shaders/neuform-isolated/sources/launch-button.html",
+    "src/shaders/neuform-isolated/sources/dot-border-button.html",
+    "src/shaders/neuform-isolated/sources/floating-dots-cta.html",
+    "src/shaders/neuform-isolated/sources/sliding-text-cta.html",
+    "src/shaders/neuform-isolated/sources/gradient-beam-cta.html",
+    "src/shaders/neuform-isolated/sources/gradient-pill-button.html",
+    "src/shaders/neuform-isolated/sources/generate-button.html",
+    "src/shaders/neuform-isolated/sources/glassmorphism-cta.html",
+    "src/shaders/neuform-isolated/sources/spinning-border-button.html",
+    "src/shaders/neuform-isolated/sources/gradient-cta.html",
+    "src/shaders/lumen-cta/LumenCta.tsx",
+    "src/shaders/lumen-cta/lumen-cta.css",
+    "src/shaders/lumen-cta/sources/lumen.html",
+    "halftone-bloom.html — Aster glass access and arrow CTA treatments"
+   ],
+   "variants": [
+    {
+     "id": "dark-pill",
+     "label": "Dark Glass",
+     "description": "A deep charcoal glass rectangle with a softly revolving inner highlight and restrained metallic type.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/dark-pill"
+    },
+    {
+     "id": "launch-button",
+     "label": "Launch Button",
+     "description": "A warm amber launch control with tactile depth, a soft aura, and a compact lightning icon.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/launch-button"
+    },
+    {
+     "id": "dot-border-button",
+     "label": "Dot Border Button",
+     "description": "A bright creation CTA framed by four corner dots and sequentially drawn dashed border segments.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/dot-border-button"
+    },
+    {
+     "id": "floating-dots-cta",
+     "label": "Floating Dots CTA",
+     "description": "A saturated blue CTA with a glass highlight and a continuous stream of floating light points.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/floating-dots-cta"
+    },
+    {
+     "id": "sliding-text-cta",
+     "label": "Sliding Text CTA",
+     "description": "A dark rectangle CTA whose label slides, blurs, and resolves into a crisp duplicate on hover.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/sliding-text-cta"
+    },
+    {
+     "id": "gradient-beam-cta",
+     "label": "Gradient Beam CTA",
+     "description": "A dark builder CTA with a rotating orange edge beam, drifting dot texture, and responsive glow.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/gradient-beam-cta"
+    },
+    {
+     "id": "gradient-pill-button",
+     "label": "Gradient Pill Button",
+     "description": "A restrained metallic lesson control with a masked gradient edge, soft elevation, and arrow icon.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/gradient-pill-button"
+    },
+    {
+     "id": "generate-button",
+     "label": "Generate Button",
+     "description": "A glossy generate control with prismatic borders, animated lettering, and an illuminated sparkle icon.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/generate-button"
+    },
+    {
+     "id": "glassmorphism-cta",
+     "label": "Glassmorphism CTA",
+     "description": "A glass CTA with a revolving highlight, advisor portrait, and a glowing generative-action icon.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/glassmorphism-cta"
+    },
+    {
+     "id": "spinning-border-button",
+     "label": "Spinning Border Button",
+     "description": "A compact graphite CTA that replaces its static edge with a rotating white border beam on hover.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/spinning-border-button"
+    },
+    {
+     "id": "gradient-cta",
+     "label": "Gradient CTA",
+     "description": "A sunlit amber CTA with inset highlights, deep elevation, and a rising hover sheen.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/gradient-cta"
+    },
+    {
+     "id": "lumen-cta",
+     "label": "Lumen CTA",
+     "description": "The authored six-stop violet gradient pill with its inner highlight, cast glow, and trailing open ring.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/lumen-cta"
+    },
+    {
+     "id": "lumen-cta-ghost",
+     "label": "Lumen CTA Ghost",
+     "description": "The authored sibling pill with the same geometry, a blurred glass fill, and a hairline outline.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/lumen-cta-ghost"
+    },
+    {
+     "id": "trochil-signal",
+     "label": "Trochil Signal",
+     "description": "The selected Trochil request-access treatment: a restrained black technical rectangle with a fine lit edge and passing warm signal sheen.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/trochil-signal"
+    },
+    {
+     "id": "attune-thermal",
+     "label": "Attune Thermal",
+     "description": "The selected Attune primary action with a compact orange thermal gradient, inset highlight, grounded glow, and chevron.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/attune-thermal"
+    },
+    {
+     "id": "tideform-outline",
+     "label": "Tideform Outline",
+     "description": "The selected Tideform action: a square technical outline with tracked mono type, warm hover state, and a long directional arrow.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/tideform-outline"
+    },
+    {
+     "id": "understory-arrow-pill",
+     "label": "Understory Arrow Pill",
+     "description": "The selected Understory action with a violet capsule surface and an inset paper-toned circular arrow endcap.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/understory-arrow-pill"
+    },
+    {
+     "id": "meridian-keycap-primary",
+     "label": "Meridian Keycap Primary",
+     "description": "The selected Meridian primary action rebuilt as a blue illuminated keycap with a physical base, LED, and pressed hover travel.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/meridian-keycap-primary"
+    },
+    {
+     "id": "meridian-keycap-secondary",
+     "label": "Meridian Keycap Secondary",
+     "description": "The selected Meridian secondary action using the same tactile keycap geometry in its graphite night-side treatment.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/meridian-keycap-secondary"
+    },
+    {
+     "id": "halvorsen-arrow-pill",
+     "label": "Halvorsen Arrow Pill",
+     "description": "The selected Halvorsen action: the shared editorial arrow-pill structure recut as a bone-white capsule with a black inset arrow disc.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/halvorsen-arrow-pill"
+    },
+    {
+     "id": "aster-glass-access",
+     "label": "Aster Glass Access",
+     "description": "The compact Aster navigation action with a translucent smoke surface, masked crystalline edge, top sheen, and restrained hover lift.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/aster-glass-access"
+    },
+    {
+     "id": "aster-glass-arrow",
+     "label": "Aster Glass Arrow",
+     "description": "The Aster primary CTA using the same glass material with a bordered inset chip and a directional arrow that advances on hover.",
+     "url": "https://threeui.com/buttons/rectangle-buttons/aster-glass-arrow"
+    }
+   ],
+   "controls": [
+    "mode",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "circle-buttons",
+   "category": "Buttons",
+   "url": "https://threeui.com/buttons/circle-buttons",
+   "bundle": "https://threeui.com/source-code/circle-buttons.json",
+   "label": "Circle Buttons",
+   "importName": "CircleButtons",
+   "runtime": "DOM + CSS",
+   "tags": [
+    "css",
+    "dom",
+    "button",
+    "icon button",
+    "circle",
+    "circular",
+    "round",
+    "play",
+    "video",
+    "media control",
+    "plus",
+    "add",
+    "create",
+    "mail",
+    "email",
+    "send",
+    "glass",
+    "glassmorphism",
+    "amber",
+    "gold",
+    "dot border",
+    "dashed border",
+    "tactile",
+    "hover",
+    "focus",
+    "press",
+    "disabled",
+    "reduced motion",
+    "light mode",
+    "dark mode",
+    "responsive",
+    "animated",
+    "variants"
+   ],
+   "description": "Three compact circular icon controls using the exact Dark Glass, Launch, and Dot Border material systems.",
+   "interaction": "Source-faithful hover and press behavior, focus-visible ring, reduced-motion fallback, and adaptive light/dark palette",
+   "asset": "Inline SVG icons; no external runtime assets",
+   "sourceCommit": "SHA-256 2e85693f7ada",
+   "sourceFiles": [
+    "src/shaders/circle-buttons/CircleButtons.tsx",
+    "src/shaders/circle-buttons/circle-buttons.css"
+   ],
+   "variants": [
+    {
+     "id": "play",
+     "label": "Play",
+     "description": "The Dark Glass rectangle reduced to a compact circle with its original charcoal surface, masked edge, and moving conic light.",
+     "url": "https://threeui.com/buttons/circle-buttons/play"
+    },
+    {
+     "id": "plus",
+     "label": "Plus",
+     "description": "The Launch rectangle's exact amber gradient, 4px base, soft aura, and 2px pressed state around a centered plus glyph.",
+     "url": "https://threeui.com/buttons/circle-buttons/plus"
+    },
+    {
+     "id": "mail",
+     "label": "Mail",
+     "description": "The Dot Border rectangle's transparent face, blue hover fill, four moving corner dots, and sequential dashed frame around a mail glyph.",
+     "url": "https://threeui.com/buttons/circle-buttons/mail"
+    }
+   ],
+   "controls": [
+    "mode",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "liquid-metal-button",
+   "category": "Buttons",
+   "url": "https://threeui.com/buttons/liquid-metal-button",
+   "bundle": "https://threeui.com/source-code/liquid-metal-button.json",
+   "label": "Liquid Metal Button",
+   "importName": "LiquidMetalButton",
+   "runtime": "Raw WebGL 2 + DOM/CSS",
+   "tags": [
+    "webgl2",
+    "webgl",
+    "glsl",
+    "shader",
+    "button",
+    "cta",
+    "liquid metal",
+    "metallic",
+    "chromatic",
+    "iridescent",
+    "dispersion",
+    "bloom",
+    "glow",
+    "ripple",
+    "hover",
+    "focus",
+    "keyboard",
+    "interactive",
+    "pointer",
+    "pill",
+    "circle",
+    "circular",
+    "orb",
+    "icon button",
+    "plus",
+    "play",
+    "play button",
+    "monotone",
+    "colored",
+    "diameter",
+    "stroke",
+    "custom text",
+    "dark",
+    "sign up",
+    "reduced motion",
+    "responsive",
+    "variants"
+   ],
+   "description": "A prismatic liquid-metal control in Sign up pill, Liquid Orb, and configurable Play Circle variants, with pointer-following bloom and press ripples.",
+   "interaction": "Hover, focus, pointer-dragged metal, faceted press ripples, and Enter/Space activation",
+   "asset": "1 exact authored HTML scene with remote Inter stylesheet and system-font fallback",
+   "sourceCommit": "SHA-256 76624e881a3a",
+   "sourceFiles": [
+    "src/shaders/liquid-metal-button/liquid-metal-button.html",
+    "src/shaders/liquid-metal-button/LiquidMetalButton.tsx"
+   ],
+   "variants": [
+    {
+     "id": "play-circle",
+     "label": "Play Circle",
+     "description": "A compact icon-only play control with configurable finish, diameter, outline, and accessible label.",
+     "url": "https://threeui.com/buttons/liquid-metal-button/play-circle"
+    },
+    {
+     "id": "pill",
+     "label": "Sign up Pill",
+     "description": "The original authored liquid-metal Sign up pill with its complete spectral field, bloom, pointer well, and faceted press ripple.",
+     "url": "https://threeui.com/buttons/liquid-metal-button/pill"
+    },
+    {
+     "id": "circle",
+     "label": "Liquid Orb",
+     "description": "The exact liquid-metal WebGL field measured through a compact 56–72px circular plus control, preserving every original interaction and post-process pass.",
+     "url": "https://threeui.com/buttons/liquid-metal-button/circle"
+    }
+   ],
+   "controls": []
+  },
+  {
+   "id": "character-carousel",
+   "category": "UI Elements",
+   "url": "https://threeui.com/ui-elements/character-carousel",
+   "bundle": "https://threeui.com/source-code/character-carousel.json",
+   "label": "Character Carousel",
+   "importName": "CharacterCarousel",
+   "runtime": "DOM + CSS",
+   "tags": [
+    "css",
+    "dom",
+    "ui",
+    "carousel",
+    "filmstrip",
+    "wave",
+    "cards",
+    "portraits",
+    "characters",
+    "profiles",
+    "editorial",
+    "perspective",
+    "3d",
+    "light mode",
+    "dark mode",
+    "pointer",
+    "wheel",
+    "keyboard",
+    "responsive",
+    "interactive",
+    "animated",
+    "variants"
+   ],
+   "description": "Two authored editorial character-card carousels collected as a light filmstrip and a dark responsive wave.",
+   "interaction": "Pointer focus, wheel and arrow navigation, card selection, idle drift, responsive orientation, scale, speed, opacity, and palette",
+   "asset": "4 embedded authored portrait JPEGs shared by both exact source documents",
+   "sourceCommit": "SHA-256 4c98939e0e2b",
+   "sourceFiles": [
+    "character-filmstrip.html — complete authored light filmstrip",
+    "character-wave.html — complete authored dark wave",
+    "src/shaders/character-carousel/sources/character-filmstrip.html",
+    "src/shaders/character-carousel/sources/character-wave.html",
+    "src/shaders/character-carousel/CharacterCarousel.tsx"
+   ],
+   "variants": [
+    {
+     "id": "character-filmstrip",
+     "label": "Filmstrip",
+     "description": "A warm editorial card deck with framed portraits, numbered identity footers, paper grain, and a deep looping perspective rail.",
+     "url": "https://threeui.com/ui-elements/character-carousel/character-filmstrip"
+    },
+    {
+     "id": "character-wave",
+     "label": "Wave",
+     "description": "A dark dimensional card wave with colored profile tiles, responsive horizontal-to-vertical motion, and orientation toggling.",
+     "url": "https://threeui.com/ui-elements/character-carousel/character-wave"
+    }
+   ],
+   "controls": [
+    "speed",
+    "scale",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "gallery",
+   "category": "UI Elements",
+   "url": "https://threeui.com/ui-elements/gallery",
+   "bundle": "https://threeui.com/source-code/gallery.json",
+   "label": "Gallery",
+   "importName": "Gallery",
+   "runtime": "Three.js r149",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "ui",
+    "gallery",
+    "carousel",
+    "image ribbon",
+    "cylindrical",
+    "spiral",
+    "editorial",
+    "portraits",
+    "light mode",
+    "paper",
+    "grid",
+    "responsive",
+    "reduced motion",
+    "animated"
+   ],
+   "description": "The isolated Vantrix hero image ribbon: sixteen curved editorial panels orbiting a vertical cylindrical rail on a quiet paper grid.",
+   "interaction": "Automatic rotation and vertical drift, responsive DPR-capped resize, reduced-motion still frame, and visibility-aware lifecycle",
+   "asset": "5 locally optimized authored gallery images",
+   "sourceCommit": "SHA-256 f7a576d4db08",
+   "sourceFiles": [
+    "Vantrix Studio Landing Page Template.html — hero carousel only",
+    "src/shaders/gallery/Gallery.tsx",
+    "src/shaders/gallery/gallery.css",
+    "src/shaders/gallery/assets/gallery-1.webp",
+    "src/shaders/gallery/assets/gallery-2.webp",
+    "src/shaders/gallery/assets/gallery-3.webp",
+    "src/shaders/gallery/assets/gallery-4.webp",
+    "src/shaders/gallery/assets/gallery-5.webp"
+   ],
+   "variants": [],
+   "controls": [
+    "speed",
+    "scale",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "sylva-living-world",
+   "category": "Three.js",
+   "url": "https://threeui.com/three-js/sylva-living-world",
+   "bundle": "https://threeui.com/source-code/sylva-living-world.json",
+   "label": "Sylva Living World",
+   "importName": "SylvaLivingWorldScene",
+   "runtime": "Three.js r149",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "glsl",
+    "shader",
+    "procedural",
+    "moss",
+    "roots",
+    "arch",
+    "ridge",
+    "forest",
+    "nature",
+    "green",
+    "ferns",
+    "flowers",
+    "sakura",
+    "cherry blossom",
+    "cherry tree",
+    "tree",
+    "branches",
+    "bark",
+    "grove",
+    "silhouette",
+    "backlit",
+    "petals",
+    "falling petals",
+    "maple",
+    "autumn",
+    "fall",
+    "leaves",
+    "red",
+    "amber",
+    "sequoia",
+    "redwood",
+    "conifer",
+    "needles",
+    "fog",
+    "mist",
+    "sunset",
+    "sky",
+    "pink",
+    "peach",
+    "pollen",
+    "butterfly",
+    "instancing",
+    "canvas texture",
+    "pointer",
+    "parallax",
+    "interactive",
+    "scan light",
+    "scene only",
+    "responsive",
+    "reduced motion",
+    "variants"
+   ],
+   "description": "The original procedural moss-root world with pale flowers, ferns, drifting pollen, scan light, and a landing butterfly.",
+   "interaction": "Pointer-driven moss parting, camera parallax, pollen trails, scan-light entrance, and butterfly flight",
+   "asset": "No binary assets — the canonical HTML and local MIT Three.js runtime are carried as source",
+   "sourceCommit": "SHA-256 fd922291297d",
+   "sourceFiles": [
+    "src/shaders/sylva-living-world/SylvaLivingWorldScene.tsx",
+    "src/shaders/sylva-living-world/sources/inner-green-3d.html",
+    "src/shaders/sylva-living-world/sources/inner-green-assets/three.min.js"
+   ],
+   "variants": [
+    {
+     "id": "living-green",
+     "label": "Living Green",
+     "description": "The original procedural moss-root world with pale flowers, ferns, drifting pollen, scan light, and a landing butterfly.",
+     "url": "https://threeui.com/three-js/sylva-living-world/living-green"
+    }
+   ],
+   "controls": []
+  },
+  {
+   "id": "temple-night",
+   "category": "Three.js",
+   "url": "https://threeui.com/three-js/temple-night",
+   "bundle": "https://threeui.com/source-code/temple-night.json",
+   "label": "Temple Night",
+   "importName": "TempleNightScene",
+   "runtime": "Three.js r149",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "shader",
+    "architecture",
+    "japanese",
+    "temple",
+    "rain",
+    "mist",
+    "bloom",
+    "landscape",
+    "procedural"
+   ],
+   "description": "Kage’s procedural Kyoto mountain temple after dark, with the exact authored architecture, rain, mist, leaves, pointer wisps, camera composition, and bloom pipeline.",
+   "interaction": "Pointer parallax and world-space cursor wisps",
+   "asset": "No external scene assets",
+   "sourceCommit": "4399487d2fb42bce39c7b032fbbb50d230bf4f0b",
+   "sourceFiles": [
+    "kage-github/index.html — procedural Three.js world",
+    "src/shaders/temple-night/templeNightRenderer.js",
+    "src/shaders/temple-night/TempleNightScene.tsx"
+   ],
+   "variants": [
+    {
+     "id": "temple-night",
+     "label": "Temple Night",
+     "description": "Kage’s procedural Kyoto mountain temple after dark, with the exact authored architecture, rain, mist, leaves, pointer wisps, camera composition, and bloom pipeline.",
+     "url": "https://threeui.com/three-js/temple-night/temple-night"
+    }
+   ],
+   "controls": []
+  },
+  {
+   "id": "landscape",
+   "category": "Three.js",
+   "url": "https://threeui.com/three-js/landscape",
+   "bundle": "https://threeui.com/source-code/landscape.json",
+   "label": "Landscape",
+   "importName": "LandscapeScene",
+   "runtime": "Three.js r149",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "shader",
+    "landscape",
+    "terrain",
+    "heightfield",
+    "polar grid",
+    "grass",
+    "stones",
+    "sky",
+    "stars",
+    "time of day",
+    "sunrise",
+    "noon",
+    "sunset",
+    "night",
+    "weather",
+    "clear",
+    "rain",
+    "storm",
+    "lightning",
+    "snow",
+    "blizzard",
+    "fog",
+    "procedural",
+    "pointer",
+    "orbit",
+    "interactive",
+    "variants"
+   ],
+   "description": "A tower-free procedural terrain whose light, sky, fog, stars, rain, lightning, snow, grass, and stones move through seven authored environment states.",
+   "interaction": "Pointer parallax, drag-to-orbit, wheel and pinch zoom, with cross-fading time and weather systems",
+   "asset": "No external scene assets — the exact self-contained source carries its runtime and procedural systems",
+   "sourceCommit": "e8aab488464bcd44471c390cf309597c6f3adb05",
+   "sourceFiles": [
+    "src/shaders/japanese-tower/Towers.html — exact upstream self-contained source",
+    "scripts/generate-landscape.mjs — deterministic tower-free presentation adapter",
+    "src/shaders/landscape/LandscapeScene.tsx",
+    "public/landscape.html — generated scene-only package asset"
+   ],
+   "variants": [
+    {
+     "id": "sunrise",
+     "label": "Sunrise",
+     "description": "Low amber light crossing the grass and distant ridges under the source's warm morning sky.",
+     "url": "https://threeui.com/three-js/landscape/sunrise"
+    },
+    {
+     "id": "noon",
+     "label": "Noon",
+     "description": "Clear cool daylight with the terrain, moisture colours, stones, and grass at their most legible.",
+     "url": "https://threeui.com/three-js/landscape/noon"
+    },
+    {
+     "id": "sunset",
+     "label": "Sunset",
+     "description": "The ridges and grass settle into long warm light beneath a deepening six-stop sky.",
+     "url": "https://threeui.com/three-js/landscape/sunset"
+    },
+    {
+     "id": "night",
+     "label": "Night",
+     "description": "Moonlit terrain beneath 39,200 stars constrained to the landscape camera's visible band.",
+     "url": "https://threeui.com/three-js/landscape/night"
+    },
+    {
+     "id": "rain",
+     "label": "Rain",
+     "description": "Rain draws in the fog, darkens the ground into puddles, and throws small splashes across the field.",
+     "url": "https://threeui.com/three-js/landscape/rain"
+    },
+    {
+     "id": "storm",
+     "label": "Storm",
+     "description": "A dense sideways downpour over sunset light, with close fog and multi-stroke lightning flashes.",
+     "url": "https://threeui.com/three-js/landscape/storm"
+    },
+    {
+     "id": "snow",
+     "label": "Snow",
+     "description": "Wind-driven snow settles across the terrain, stones, and grass while a blizzard tightens the horizon.",
+     "url": "https://threeui.com/three-js/landscape/snow"
+    }
+   ],
+   "controls": []
+  },
+  {
+   "id": "japanese-tower",
+   "category": "Three.js",
+   "url": "https://threeui.com/three-js/japanese-tower",
+   "bundle": "https://threeui.com/source-code/japanese-tower.json",
+   "label": "Country Towers",
+   "importName": "JapaneseTowerLandscape",
+   "runtime": "Three.js r149 + Canvas 2D",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "shader",
+    "canvas",
+    "canvas2d",
+    "landscape",
+    "architecture",
+    "tower",
+    "procedural",
+    "japanese",
+    "chinese",
+    "vietnamese",
+    "thai",
+    "khmer",
+    "ottoman",
+    "japan",
+    "china",
+    "vietnam",
+    "thailand",
+    "cambodia",
+    "turkey",
+    "pagoda",
+    "tenshu",
+    "prang",
+    "prasat",
+    "mosque"
+   ],
+   "description": "Six country-specific towers assembling above a procedural landscape: Japanese, Chinese, Vietnamese, Thai, Khmer, and Ottoman.",
+   "interaction": "Country selection, automatic 4.4-second construction, pointer orbit, hover parallax, pinch and wheel zoom, and camera reset",
+   "asset": "1 exact self-contained authored HTML scene with six country architectures, embedded Three.js runtime, procedural landscape, and texture set",
+   "sourceCommit": "SHA-256 7810e7163c02",
+   "sourceFiles": [
+    "Towers.html — complete self-contained Three.js tower and landscape scene",
+    "src/shaders/japanese-tower/Towers.html",
+    "src/shaders/japanese-tower/JapaneseTowerLandscape.tsx",
+    "public/japanese-tower.html — generated scene-only package asset"
+   ],
+   "variants": [
+    {
+     "id": "japan",
+     "label": "Japan",
+     "description": "A Japanese tenshu with an ishigaki stone base, plastered storeys, and flying tiled eaves.",
+     "url": "https://threeui.com/three-js/japanese-tower/japan"
+    },
+    {
+     "id": "china",
+     "label": "China",
+     "description": "A Chinese pagoda in vermilion lacquer and green glaze beneath a gilt finial.",
+     "url": "https://threeui.com/three-js/japanese-tower/china"
+    },
+    {
+     "id": "vietnam",
+     "label": "Vietnam",
+     "description": "A Vietnamese tháp with seven octagonal Huế lime-wash storeys and lifted tiled eaves.",
+     "url": "https://threeui.com/three-js/japanese-tower/vietnam"
+    },
+    {
+     "id": "thailand",
+     "label": "Thailand",
+     "description": "A Thai prang rising from a stepped plinth into a richly detailed gold spire.",
+     "url": "https://threeui.com/three-js/japanese-tower/thailand"
+    },
+    {
+     "id": "cambodia",
+     "label": "Cambodia",
+     "description": "A Khmer prasat on laterite terraces with a redented sanctuary and diminishing sandstone tiers.",
+     "url": "https://threeui.com/three-js/japanese-tower/cambodia"
+    },
+    {
+     "id": "turkey",
+     "label": "Turkey",
+     "description": "An Ottoman mosque with limestone ashlar, İznik tile, a lead dome, and twin pencil minarets.",
+     "url": "https://threeui.com/three-js/japanese-tower/turkey"
+    }
+   ],
+   "controls": []
+  },
+  {
+   "id": "bookshelf",
+   "category": "Three.js",
+   "url": "https://threeui.com/three-js/bookshelf",
+   "bundle": "https://threeui.com/source-code/bookshelf.json",
+   "label": "Bookshelf",
+   "importName": "BookshelfScene",
+   "runtime": "Three.js r165",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "books",
+    "bookshelf",
+    "carousel",
+    "room",
+    "interaction",
+    "page turn",
+    "covers",
+    "product showcase"
+   ],
+   "description": "The exact seven-volume Bookshelf collection with its authored room, carousel shelf, individual cover artwork, foil, pages, inspection, opening, and page-turn system.",
+   "interaction": "Shelf navigation, volume selection, click-to-inspect, cover drag, paginated leaf drag, orbit, pan, and reset",
+   "asset": "2 exact embedded owned atlases — cover artwork and walnut texture",
+   "sourceCommit": "6ef16625e670b0285bb689bdebffc1d728c6deb1",
+   "sourceFiles": [
+    "complete-shelf/index.html — exact seven volumes, seven cover crops, and complete renderer",
+    "src/shaders/bookshelf/bookshelfRenderer.js",
+    "src/shaders/bookshelf/BookshelfScene.tsx"
+   ],
+   "variants": [],
+   "controls": []
+  },
+  {
+   "id": "structure-flow",
+   "category": "Three.js",
+   "url": "https://threeui.com/three-js/structure-flow",
+   "bundle": "https://threeui.com/source-code/structure-flow.json",
+   "label": "Structure Flow",
+   "importName": "StructureFlowCollection",
+   "runtime": "Three.js r128–r160",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "shader",
+    "particles",
+    "dome",
+    "monochrome",
+    "background",
+    "drift",
+    "horizon",
+    "orbital",
+    "matrix",
+    "expanse",
+    "logic core",
+    "dimensional",
+    "data",
+    "topology",
+    "nebula",
+    "fluid",
+    "embers",
+    "vortex",
+    "collection",
+    "variants"
+   ],
+   "description": "Thirteen authored Three.js field studies collected as one family, spanning particle domes, horizons, orbital systems, matrices, topology, fluid fields, embers, and vortexes.",
+   "interaction": "Variant-specific pointer, motion, geometry, opacity, mask, and palette controls",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 40eb5bac81e3",
+   "sourceFiles": [
+    "src/shaders/structure-flow/StructureFlowCollection.tsx",
+    "Axiom-Structure-Flow (2).html — Three.js background",
+    "src/shaders/structure-flow/structureFlowRenderer.ts",
+    "src/shaders/structure-flow/StructureFlowBackground.tsx",
+    "src/shaders/emerald-horizon/EmeraldHorizonBackground.tsx",
+    "src/shaders/orbital-sphere/OrbitalSphereBackground.tsx",
+    "src/shaders/dot-matrix/DotMatrixBackground.tsx",
+    "src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx",
+    "src/shaders/neuform-isolated/NeuformCraftEffects.tsx",
+    "src/shaders/neuform-isolated/NeuformBatchEffects.tsx"
+   ],
+   "variants": [
+    {
+     "id": "structure-flow",
+     "label": "Structure Flow",
+     "description": "A masked white particle dome drifting across a dark field.",
+     "url": "https://threeui.com/three-js/structure-flow/structure-flow"
+    },
+    {
+     "id": "emerald-horizon",
+     "label": "Emerald Horizon",
+     "description": "A deep emerald shader glow rising from an organic moving horizon.",
+     "url": "https://threeui.com/three-js/structure-flow/emerald-horizon"
+    },
+    {
+     "id": "orbital-sphere",
+     "label": "Orbital Sphere",
+     "description": "A violet particle synthesis sphere with encrypted orbital rings and luminous data nodes.",
+     "url": "https://threeui.com/three-js/structure-flow/orbital-sphere"
+    },
+    {
+     "id": "dot-matrix",
+     "label": "Dot Matrix",
+     "description": "A cyan breathing dot matrix with radial depth fade and smoothed pointer drift.",
+     "url": "https://threeui.com/three-js/structure-flow/dot-matrix"
+    },
+    {
+     "id": "expanse-field",
+     "label": "Expanse Field",
+     "description": "A full-screen ShaderMaterial expanse isolated from its original editorial layout.",
+     "url": "https://threeui.com/three-js/structure-flow/expanse-field"
+    },
+    {
+     "id": "logic-core",
+     "label": "Logic Core",
+     "description": "An isometric platform, illuminated logic core, and orbiting nodes.",
+     "url": "https://threeui.com/three-js/structure-flow/logic-core"
+    },
+    {
+     "id": "dimensional-field",
+     "label": "Dimensional Field",
+     "description": "Dimensional architecture composed from two authored ShaderMaterials.",
+     "url": "https://threeui.com/three-js/structure-flow/dimensional-field"
+    },
+    {
+     "id": "data-field",
+     "label": "Data Field",
+     "description": "A global-data Three.js network visual isolated from its dashboard frame.",
+     "url": "https://threeui.com/three-js/structure-flow/data-field"
+    },
+    {
+     "id": "topology-field",
+     "label": "Topology Field",
+     "description": "A rotating topology graph with connected nodes and rhythmic point pulses.",
+     "url": "https://threeui.com/three-js/structure-flow/topology-field"
+    },
+    {
+     "id": "nebula",
+     "label": "Nebula",
+     "description": "An indigo FBM nebula with pointer drift, breathing light, and vignette.",
+     "url": "https://threeui.com/three-js/structure-flow/nebula"
+    },
+    {
+     "id": "fluid-field",
+     "label": "Fluid Field",
+     "description": "A blue-violet animated fluid ShaderMaterial.",
+     "url": "https://threeui.com/three-js/structure-flow/fluid-field"
+    },
+    {
+     "id": "ember-storm",
+     "label": "Ember Storm",
+     "description": "A 12,000-particle ember vortex with additive heat grading and flicker.",
+     "url": "https://threeui.com/three-js/structure-flow/ember-storm"
+    },
+    {
+     "id": "flux-vortex",
+     "label": "Flux Vortex",
+     "description": "A blooming particle vortex with spiral filaments and post-process glow.",
+     "url": "https://threeui.com/three-js/structure-flow/flux-vortex"
+    }
+   ],
+   "controls": [
+    "speed",
+    "pointSize",
+    "opacity",
+    "maskStart",
+    "maskSolid"
+   ]
+  },
+  {
+   "id": "warp-field",
+   "category": "Three.js",
+   "url": "https://threeui.com/three-js/warp-field",
+   "bundle": "https://threeui.com/source-code/warp-field.json",
+   "label": "Warp Field",
+   "importName": "WarpFieldBackground",
+   "runtime": "Three.js r128",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "particles",
+    "streaks",
+    "tiles",
+    "space",
+    "fog",
+    "emerald",
+    "warp",
+    "letters",
+    "glyphs",
+    "typography",
+    "keycaps",
+    "keyboard",
+    "hyperspace",
+    "tunnel",
+    "background"
+   ],
+   "description": "Nexus’s focused hero warp: 400 emerald additive streaks and 40 luminous tiles streaming through an authored deep-space fog field.",
+   "interaction": "Customizable speed, streaks, tiles, color, camera, and brightness",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 bd7c486164d8",
+   "sourceFiles": [
+    "Nexus-Edge-Compute.html — hero warp scene",
+    "src/shaders/warp-field/warpFieldRenderer.ts",
+    "src/shaders/warp-field/WarpFieldBackground.tsx"
+   ],
+   "variants": [
+    {
+     "id": "streaks",
+     "label": "Warp Field",
+     "description": "The original hero warp: 400 emerald streaks and 40 luminous tiles through deep-space fog.",
+     "url": "https://threeui.com/three-js/warp-field/streaks"
+    },
+    {
+     "id": "letters",
+     "label": "Letter Storm",
+     "description": "160 tumbling glyphs wandering off the rails while the streak field keeps the corridor moving.",
+     "url": "https://threeui.com/three-js/warp-field/letters"
+    },
+    {
+     "id": "keycaps",
+     "label": "Keycap Drift",
+     "description": "72 lit mechanical keycaps tumbling through a 900-spark particle wake.",
+     "url": "https://threeui.com/three-js/warp-field/keycaps"
+    },
+    {
+     "id": "hyperspace",
+     "label": "Hyperspace",
+     "description": "1,200 ice-blue streaks stretched down a scrolling tunnel toward a pulsing jump core.",
+     "url": "https://threeui.com/three-js/warp-field/hyperspace"
+    }
+   ],
+   "controls": [
+    "speed",
+    "streakOpacity",
+    "tileOpacity",
+    "fov",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "engraved-certificate",
+   "category": "UI Elements",
+   "url": "https://threeui.com/ui-elements/engraved-certificate",
+   "bundle": "https://threeui.com/source-code/engraved-certificate.json",
+   "label": "Engraved Certificate",
+   "importName": "EngravedCertificate",
+   "runtime": "Canvas 2D + DOM/CSS",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "css",
+    "dom",
+    "ui",
+    "certificate",
+    "guilloche",
+    "engraving",
+    "rosette",
+    "vintage",
+    "responsive"
+   ],
+   "description": "A responsive engraved certificate: plate field, dual guilloche rosettes, and a drifting harmonic pass that auto-cycles through four cam states.",
+   "interaction": "Auto-cycled cam configurations + optional final-frame palette",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 dc48266f23df",
+   "sourceFiles": [
+    "src/shaders/neuform-isolated/sources/kinetic-lathe-certificate.html",
+    "src/shaders/neuform-isolated/NeuformCraftEffects.tsx"
+   ],
+   "variants": [],
+   "controls": [
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "woven-cloth",
+   "category": "Three.js",
+   "url": "https://threeui.com/three-js/woven-cloth",
+   "bundle": "https://threeui.com/source-code/woven-cloth.json",
+   "label": "Woven Cloth",
+   "importName": "WovenCloth",
+   "runtime": "Three.js r160",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "glsl",
+    "shader",
+    "cloth",
+    "fabric",
+    "textile",
+    "typography",
+    "deformation",
+    "simulation",
+    "procedural",
+    "animated"
+   ],
+   "description": "A Three.js woven-cloth simulation with Woven Cloth typography printed into its procedural textile so every letter deforms with the fabric, and three companion cloths woven around the same Verlet sheet.",
+   "interaction": "Variant selection; typography deforms with the authored textile motion + optional final-frame palette",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 9bfd56ef7579",
+   "sourceFiles": [
+    "src/shaders/woven-cloth/WovenCloth.tsx",
+    "src/shaders/neuform-isolated/NeuformCraftEffects.tsx",
+    "src/shaders/neuform-isolated/sources/lumina-weavers-cloth.html",
+    "src/shaders/woven-cloth/woven-cloth-iridescent.html",
+    "src/shaders/woven-cloth/woven-cloth-atelier.html",
+    "src/shaders/woven-cloth/woven-cloth-washi.html"
+   ],
+   "variants": [
+    {
+     "id": "woven-cloth",
+     "label": "Woven Cloth",
+     "description": "The packaged Neuform export, untouched: an ivory banner with a crimson hem and the Woven Cloth wordmark printed into the weave, pinned along its top edge.",
+     "url": "https://threeui.com/three-js/woven-cloth/woven-cloth"
+    },
+    {
+     "id": "iridescent",
+     "label": "Iridescent Silk",
+     "description": "A five-harness satin under a painted studio environment: a thin-film interference layer whose thickness sweeps one full order across the width, so the colour travels over the folds while the wordmark stays a tone-on-tone jacquard.",
+     "url": "https://threeui.com/three-js/woven-cloth/iridescent"
+    },
+    {
+     "id": "atelier",
+     "label": "Atelier Flag",
+     "description": "The same sheet cut and sewn: three linen panels joined by flat-felled seams and topstitching, an indigo heading tape on the hoist with brass grommets and a mast, hemmed at the fly, and a woven label tacked on at the corner.",
+     "url": "https://threeui.com/three-js/woven-cloth/atelier"
+    },
+    {
+     "id": "washi",
+     "label": "Washi Noren",
+     "description": "An indigo-dyed kozo noren on a wooden rod, backlit through a shoji: laid and chain lines from the papermaking screen, a torn deckle edge cut by an alpha mask, and slits that free three panels to sway on their own.",
+     "url": "https://threeui.com/three-js/woven-cloth/washi"
+    }
+   ],
+   "controls": [
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "performance-gauges",
+   "category": "CSS",
+   "url": "https://threeui.com/css/performance-gauges",
+   "bundle": "https://threeui.com/source-code/performance-gauges.json",
+   "label": "Performance Gauges",
+   "importName": "PerformanceGauges",
+   "runtime": "DOM + CSS",
+   "tags": [
+    "css",
+    "dom",
+    "ui",
+    "gauges",
+    "dashboard",
+    "diagnostics",
+    "needles",
+    "instruments",
+    "telemetry",
+    "animated",
+    "variants",
+    "tachometer",
+    "speedometer",
+    "boost",
+    "ev",
+    "skeuomorphic"
+   ],
+   "description": "Four layered CSS instruments — tachometer, speedometer, turbo boost, and EV power — each isolated to one full-bleed dial with polar tick geometry, scale bands, and a self-testing needle sweep.",
+   "interaction": "Self-test needle sweep, settle, and idle flutter with a counting readout + optional final-frame palette",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 2dc25058fc85",
+   "sourceFiles": [
+    "src/shaders/neuform-isolated/sources/performance-gauges.html",
+    "src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx"
+   ],
+   "variants": [
+    {
+     "id": "tachometer",
+     "label": "Tachometer",
+     "description": "Orange sunburst dial reading 0–7000 r/min with a redline band, a machined oil-temperature sub-dial, and a counterweighted red needle.",
+     "url": "https://threeui.com/css/performance-gauges/tachometer"
+    },
+    {
+     "id": "speedometer",
+     "label": "Speedometer",
+     "description": "0–160 km/h scale whose travelled arc fills behind the needle, with a peak-hold marker, counting digital readout, and rolling odometer.",
+     "url": "https://threeui.com/css/performance-gauges/speedometer"
+    },
+    {
+     "id": "boost",
+     "label": "Turbo Boost",
+     "description": "Navy −1.0 to 1.5 bar dial that separates the vacuum half from the pressure half and flags the wastegate threshold with a pulsing overboost lamp.",
+     "url": "https://threeui.com/css/performance-gauges/boost"
+    },
+    {
+     "id": "power",
+     "label": "EV Power",
+     "description": "Regeneration-to-power scale that fills its track from zero, with a green charge segment, kilowatt readout, and battery state-of-charge bar.",
+     "url": "https://threeui.com/css/performance-gauges/power"
+    }
+   ],
+   "controls": [
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "uplink-loader",
+   "category": "CSS",
+   "url": "https://threeui.com/css/uplink-loader",
+   "bundle": "https://threeui.com/source-code/uplink-loader.json",
+   "label": "Uplink Loader",
+   "importName": "UplinkLoader",
+   "runtime": "DOM + CSS + JavaScript",
+   "tags": [
+    "css",
+    "dom",
+    "javascript",
+    "ui",
+    "loading",
+    "loader",
+    "progress",
+    "uplink",
+    "telemetry",
+    "technical",
+    "sci-fi",
+    "terminal",
+    "green",
+    "neon",
+    "scanlines",
+    "grain",
+    "animated",
+    "dark mode",
+    "responsive"
+   ],
+   "description": "A cinematic secure-uplink loader with stepped progress, illuminated telemetry ticks, neon readouts, technical corner markers, mirrored side rails, scanlines, and procedural grain.",
+   "interaction": "Autonomous stepped progress sequence with phase labels, completion hold, and reset glitch",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 f73bb2963501",
+   "sourceFiles": [
+    "src/shaders/uplink-loader/uplink-loader.html",
+    "src/shaders/uplink-loader/UplinkLoader.tsx"
+   ],
+   "variants": [],
+   "controls": []
+  },
+  {
+   "id": "koi-studies",
+   "category": "CSS",
+   "url": "https://threeui.com/css/koi-studies",
+   "bundle": "https://threeui.com/source-code/koi-studies.json",
+   "label": "Koi Studies",
+   "importName": "KoiStudies",
+   "runtime": "DOM + CSS 3D + Canvas 2D + WebGL",
+   "tags": [
+    "css",
+    "css3d",
+    "dom",
+    "canvas",
+    "canvas2d",
+    "webgl",
+    "ui",
+    "cards",
+    "card stack",
+    "koi",
+    "japanese",
+    "halftone",
+    "pixel mask",
+    "drag",
+    "tap",
+    "keyboard",
+    "pointer",
+    "interactive",
+    "responsive",
+    "dark mode",
+    "animated"
+   ],
+   "description": "A tactile stack of three Japanese koi studies with CSS 3D depth, pointer tilt, drag and keyboard navigation, pixel-mask reveals, and animated halftone imagery.",
+   "interaction": "Drag, tap, or use the arrow keys to cycle cards, with pointer tilt, reveal trails, responsive layout, and reduced-motion behavior",
+   "asset": "3 embedded JPEGs + 3 embedded MP4 clips + 1 inline halftone mask; the optional authored CDN shader has a CSS fallback",
+   "sourceCommit": "SHA-256 32cf6493414a",
+   "sourceFiles": [
+    "public/synthralos-halftone.html — byte-exact complete source",
+    "src/shaders/koi-studies/KoiStudies.tsx"
+   ],
+   "variants": [],
+   "controls": []
+  },
+  {
+   "id": "article-headings",
+   "category": "Text Animation",
+   "url": "https://threeui.com/text-animation/article-headings",
+   "bundle": "https://threeui.com/source-code/article-headings.json",
+   "label": "Article Headings",
+   "importName": "TextAnimationCollection",
+   "runtime": "DOM/CSS + Canvas 2D",
+   "tags": [
+    "css",
+    "dom",
+    "canvas",
+    "canvas2d",
+    "typography",
+    "text animation",
+    "scramble",
+    "decode",
+    "heading",
+    "noise",
+    "editorial",
+    "neon",
+    "intro",
+    "particles",
+    "wordmark",
+    "audio",
+    "visualizer",
+    "light mode",
+    "dark mode",
+    "animated",
+    "variants"
+   ],
+   "description": "Three expressive text treatments collected in one family: a chromatic intro, a particle wordmark, and an audio-reactive identity lockup.",
+   "interaction": "Authored text motion with responsive presentation, reduced-motion handling, and synchronized light/dark mode",
+   "asset": "Exact embedded Fragment Mono font; all other sources and marks are bundled inline",
+   "sourceCommit": "5a736cd3c1f6f19802f61ebb10e1701b9f7aa26e / SHA-256 e14795f24ea8 / 8d2cfccf1140 / 26f0d8d04494 / 1545c354af8d",
+   "sourceFiles": [
+    "ascii-page-transition-v1.html — article headings and decode lifecycle",
+    "src/shaders/article-headings/TextAnimationCollection.tsx",
+    "src/shaders/article-headings/articleHeadingDecode.ts",
+    "src/shaders/article-headings/ArticleHeadings.tsx",
+    "src/shaders/neuform-isolated/sources/glassblown-neon.html",
+    "src/shaders/neuform-isolated/sources/creator-studio-intro.html",
+    "src/shaders/neuform-isolated/sources/epilude-footer.html",
+    "src/shaders/neuform-isolated/sources/audio-wordmark.html",
+    "src/shaders/neuform-isolated/NeuformCraftEffects.tsx",
+    "src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx",
+    "src/shaders/fonts/fragment-mono.woff2"
+   ],
+   "variants": [
+    {
+     "id": "threeui-intro",
+     "label": "Intro Text",
+     "description": "The opening chromatic ThreeUI wordmark assembly, isolated to its first authored beat.",
+     "url": "https://threeui.com/text-animation/article-headings/threeui-intro"
+    },
+    {
+     "id": "particle-wordmark",
+     "label": "Particle Wordmark",
+     "description": "The Shaders wordmark materializes through a seeded field of drifting dots and squares.",
+     "url": "https://threeui.com/text-animation/article-headings/particle-wordmark"
+    },
+    {
+     "id": "audio-wordmark",
+     "label": "Audio Wordmark",
+     "description": "Animated circular audio-bar fields paired with a compact ThreeUI wordmark and icon lockup.",
+     "url": "https://threeui.com/text-animation/article-headings/audio-wordmark"
+    }
+   ],
+   "controls": [
+    "mode",
+    "duration",
+    "stagger",
+    "scrambleLength",
+    "preserveChance",
+    "tailChance"
+   ]
+  },
+  {
+   "id": "animated-top-dock",
+   "category": "CSS",
+   "url": "https://threeui.com/css/animated-top-dock",
+   "bundle": "https://threeui.com/source-code/animated-top-dock.json",
+   "label": "Animated Top Dock",
+   "importName": "AnimatedTopDock",
+   "runtime": "DOM + CSS + WebGL + Three.js r128",
+   "tags": [
+    "css",
+    "dom",
+    "ui",
+    "navigation",
+    "dock",
+    "spring",
+    "glass",
+    "liquid glass",
+    "proximity",
+    "responsive",
+    "menu",
+    "top menu",
+    "header",
+    "navbar",
+    "command bar",
+    "logo",
+    "cta",
+    "animated",
+    "modern",
+    "retro",
+    "pixel",
+    "pixel art",
+    "dither",
+    "shader",
+    "glsl",
+    "webgl",
+    "noise",
+    "threejs",
+    "three.js",
+    "3d",
+    "refraction",
+    "dispersion",
+    "particles",
+    "variants",
+    "hover",
+    "pointer",
+    "interactive",
+    "dark mode"
+   ],
+   "description": "Sable’s proximity-spring menu in four fits: the authored centred dock, a modern command bar, a fitted pixel-terminal strip, and a vertical refracting Three.js glass rail.",
+   "interaction": "Pointer proximity, keyboard focus, active selection, pointer parallax, reduced motion, and mobile static mode",
+   "asset": "Exact embedded Fragment Mono font extracted from the authored source",
+   "sourceCommit": "5a736cd3c1f6f19802f61ebb10e1701b9f7aa26e",
+   "sourceFiles": [
+    "ascii-page-transition-v1.html — exact top menu dock",
+    "src/shaders/animated-top-dock/topDockController.ts",
+    "src/shaders/animated-top-dock/AnimatedTopDock.tsx",
+    "src/shaders/animated-top-dock/retroPixelField.ts",
+    "src/shaders/animated-top-dock/glassParticleField.ts",
+    "src/shaders/fonts/fragment-mono.woff2"
+   ],
+   "variants": [
+    {
+     "id": "sable",
+     "label": "Sable Dock",
+     "description": "The authored Sable dock: a centred glass capsule whose items spring downward and widen as the pointer crosses them.",
+     "url": "https://threeui.com/css/animated-top-dock/sable"
+    },
+    {
+     "id": "modern",
+     "label": "Command Bar",
+     "description": "An inset modern header: wordmark on the left, the proximity dock centred on the bar’s midline, and a paired sign-in and gradient call to action on the right.",
+     "url": "https://threeui.com/css/animated-top-dock/modern"
+    },
+    {
+     "id": "retro",
+     "label": "Pixel Terminal",
+     "description": "A fitted terminal strip: the menu cells own the whole bar and trade width with each other, over a WebGL noise field quantised through an 8×8 ordered dither into an eight-stop dusk palette.",
+     "url": "https://threeui.com/css/animated-top-dock/retro"
+    },
+    {
+     "id": "glass",
+     "label": "Liquid Glass",
+     "description": "A vertical glass rail whose proximity field runs down the y axis, over a Three.js bead field that refracts the backdrop in screen space with per-channel dispersion and a specular rim.",
+     "url": "https://threeui.com/css/animated-top-dock/glass"
+    }
+   ],
+   "controls": [
+    "proximity",
+    "spring",
+    "damping",
+    "widthGrowth",
+    "heightGrowth",
+    "drop"
+   ]
+  },
+  {
+   "id": "sketchbook",
+   "category": "CSS",
+   "url": "https://threeui.com/css/sketchbook",
+   "bundle": "https://threeui.com/source-code/sketchbook.json",
+   "label": "Sketchbook",
+   "importName": "Sketchbook",
+   "runtime": "DOM + CSS 3D",
+   "tags": [
+    "css",
+    "dom",
+    "css3d",
+    "3d",
+    "book",
+    "paper",
+    "page curl",
+    "drag",
+    "zoom",
+    "illustration",
+    "magnifying glass",
+    "interactive"
+   ],
+   "description": "The exact Singapore paper sketchbook with nested-strip page curls, direct dragging, tilt, zoom, a movable magnifying glass, and its complete authored plate set.",
+   "interaction": "Drag or tap pages, arrows, keyboard, cursor tilt, zoom, and draggable loupe",
+   "asset": "14 exact artworks + 3 exact local font files",
+   "sourceCommit": "3938bc8def563f89ed587e52ac35ddc056c0a5f0",
+   "sourceFiles": [
+    "sketchbook/index.html — complete interaction source",
+    "sketchbook/* — 14 artworks and 3 owned font files",
+    "src/shaders/sketchbook/sketchbookDocument.js",
+    "src/shaders/sketchbook/Sketchbook.tsx"
+   ],
+   "variants": [],
+   "controls": []
+  },
+  {
+   "id": "constellation-field",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/constellation-field",
+   "bundle": "https://threeui.com/source-code/constellation-field.json",
+   "label": "Constellation Field",
+   "importName": "ConstellationField",
+   "runtime": "Canvas 2D + Raw WebGL",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "particles",
+    "network",
+    "nodes",
+    "lines",
+    "stars",
+    "constellation",
+    "background",
+    "animated"
+   ],
+   "description": "A family of particle networks, gateways, interface lines, defense traces, and topographic fields gathered into one configurable collection.",
+   "interaction": "Variant selection plus customizable mode, speed, size, stroke width, length, density, opacity, and palette",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 1920ad4fe34f",
+   "sourceFiles": [
+    "src/shaders/constellation-field/ConstellationField.tsx",
+    "src/shaders/neuform-isolated/NeuformBatchEffects.tsx",
+    "src/shaders/neuform-isolated/sources/constellation-field.html",
+    "src/shaders/neuform-isolated/sources/particle-drift.html",
+    "src/shaders/neuform-isolated/sources/particle-network.html",
+    "src/shaders/neuform-isolated/sources/gateway-flow.html",
+    "src/shaders/neuform-isolated/sources/connectivity-graph.html",
+    "src/shaders/neuform-isolated/sources/interface-lines.html",
+    "src/shaders/neuform-isolated/sources/defense-lines.html",
+    "src/shaders/neuform-isolated/sources/topo-field.html"
+   ],
+   "variants": [
+    {
+     "id": "constellation-field",
+     "label": "Constellation Field",
+     "description": "A drifting particle constellation network with tunable link stroke width over a deep night field.",
+     "url": "https://threeui.com/backgrounds/constellation-field/constellation-field"
+    },
+    {
+     "id": "particle-drift",
+     "label": "Particle Drift",
+     "description": "A soft particle drift field lifted from a compute-network hero stage.",
+     "url": "https://threeui.com/backgrounds/constellation-field/particle-drift"
+    },
+    {
+     "id": "particle-network",
+     "label": "Particle Network",
+     "description": "A sharp, thin-stroke particle network field with crisp retina trails.",
+     "url": "https://threeui.com/backgrounds/constellation-field/particle-network"
+    },
+    {
+     "id": "gateway-flow",
+     "label": "Gateway Flow",
+     "description": "A black-stage flow canvas with streaming gateway trajectories.",
+     "url": "https://threeui.com/backgrounds/constellation-field/gateway-flow"
+    },
+    {
+     "id": "connectivity-graph",
+     "label": "Connectivity Graph",
+     "description": "A light-mode connectivity graph canvas with animated node links.",
+     "url": "https://threeui.com/backgrounds/constellation-field/connectivity-graph"
+    },
+    {
+     "id": "interface-lines",
+     "label": "Interface Lines",
+     "description": "A faint interface line-field background for dense system UI stages.",
+     "url": "https://threeui.com/backgrounds/constellation-field/interface-lines"
+    },
+    {
+     "id": "defense-lines",
+     "label": "Defense Lines",
+     "description": "A crimson defense-line canvas field behind a high-contrast hero stage.",
+     "url": "https://threeui.com/backgrounds/constellation-field/defense-lines"
+    },
+    {
+     "id": "topo-field",
+     "label": "Topo Field",
+     "description": "A raw-WebGL topography field with flowing elevation bands.",
+     "url": "https://threeui.com/backgrounds/constellation-field/topo-field"
+    }
+   ],
+   "controls": [
+    "mode",
+    "speed",
+    "size",
+    "strokeWidth",
+    "length",
+    "density",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "portal-field",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/portal-field",
+   "bundle": "https://threeui.com/source-code/portal-field.json",
+   "label": "Portal Field",
+   "importName": "PortalFieldCollection",
+   "runtime": "Three.js r134 + Raw WebGL + Canvas 2D",
+   "tags": [
+    "threejs",
+    "three.js",
+    "3d",
+    "webgl",
+    "canvas",
+    "canvas2d",
+    "glsl",
+    "shader",
+    "shadermaterial",
+    "portal",
+    "cloud",
+    "bell",
+    "chladni",
+    "stream convergence",
+    "flow field",
+    "simplex noise",
+    "particle trails",
+    "wavefront",
+    "pointer",
+    "fringe",
+    "light",
+    "ambient",
+    "background",
+    "variants"
+   ],
+   "description": "Five ambient field backgrounds collected across Three.js, raw WebGL, and Canvas 2D renderers.",
+   "interaction": "Variant selection plus customizable motion, geometry, opacity, and palette",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 f90e34f83d51",
+   "sourceFiles": [
+    "src/shaders/portal-field/PortalFieldCollection.tsx",
+    "src/shaders/neuform-isolated/NeuformBatchEffects.tsx",
+    "src/shaders/neuform-isolated/sources/portal-field.html",
+    "src/shaders/neuform-isolated/sources/flow-field.html",
+    "src/shaders/neuform-isolated/NeuformIsolatedEffects.tsx",
+    "src/shaders/neuform-isolated/sources/strata-cloud.html",
+    "src/shaders/stream-convergence/StreamConvergenceBackground.tsx",
+    "src/shaders/stream-convergence/streamConvergenceShaders.ts",
+    "src/shaders/bell-field/BellFieldBackground.tsx",
+    "src/shaders/bell-field/bellFieldShaders.ts"
+   ],
+   "variants": [
+    {
+     "id": "portal-field",
+     "label": "Portal Field",
+     "description": "A Three.js ShaderMaterial portal with pointer-reactive fringe light.",
+     "url": "https://threeui.com/backgrounds/portal-field/portal-field"
+    },
+    {
+     "id": "cloud-field",
+     "label": "Cloud Field",
+     "description": "A raw-WebGL cloud migration background isolated at its source renderer boundary.",
+     "url": "https://threeui.com/backgrounds/portal-field/cloud-field"
+    },
+    {
+     "id": "flow-field",
+     "label": "Flow Field",
+     "description": "Warm amber, gold, and coral particles trace a deterministic simplex-noise field.",
+     "url": "https://threeui.com/backgrounds/portal-field/flow-field"
+    },
+    {
+     "id": "bell-field",
+     "label": "Bell Field",
+     "description": "A Chladni-inspired bell field with nodal metal patterns and rising foundry embers.",
+     "url": "https://threeui.com/backgrounds/portal-field/bell-field"
+    },
+    {
+     "id": "stream-convergence",
+     "label": "Stream Convergence",
+     "description": "Three chromatically separated violet wavefronts crossing a rotated fluid field.",
+     "url": "https://threeui.com/backgrounds/portal-field/stream-convergence"
+    }
+   ],
+   "controls": [
+    "speed",
+    "size",
+    "length",
+    "density",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "diagnostics-panel",
+   "category": "UI Elements",
+   "url": "https://threeui.com/ui-elements/diagnostics-panel",
+   "bundle": "https://threeui.com/source-code/diagnostics-panel.json",
+   "label": "Diagnostics Panel",
+   "importName": "DiagnosticsPanel",
+   "runtime": "Canvas 2D",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "ui",
+    "dashboard",
+    "diagnostics",
+    "diagrams",
+    "layers",
+    "nodes",
+    "cube",
+    "mesh",
+    "illustration"
+   ],
+   "description": "Three diagnostic illustration variants — layered planes, node cubes, and a flowing mesh — each isolated without page chrome or copy.",
+   "interaction": "Variant selection plus customizable speed, size, opacity, and palette",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 6d05694bf006",
+   "sourceFiles": [
+    "src/shaders/neuform-isolated/sources/diagnostics-panel.html",
+    "src/shaders/neuform-isolated/NeuformBatchEffects.tsx"
+   ],
+   "variants": [
+    {
+     "id": "layers",
+     "label": "Layered Planes",
+     "description": "Five floating isometric planes with a highlighted top layer and a cropped scan-line core.",
+     "url": "https://threeui.com/ui-elements/diagnostics-panel/layers"
+    },
+    {
+     "id": "nodes",
+     "label": "Node Cubes",
+     "description": "Five synchronized wireframe cubes forming a softly animated diagnostic node cluster.",
+     "url": "https://threeui.com/ui-elements/diagnostics-panel/nodes"
+    },
+    {
+     "id": "flow",
+     "label": "Flowing Mesh",
+     "description": "An isometric wire mesh that continuously ripples around a focused central peak.",
+     "url": "https://threeui.com/ui-elements/diagnostics-panel/flow"
+    }
+   ],
+   "controls": [
+    "mode",
+    "speed",
+    "size",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "skeuomorphic-toggle",
+   "category": "UI Elements",
+   "url": "https://threeui.com/ui-elements/skeuomorphic-toggle",
+   "bundle": "https://threeui.com/source-code/skeuomorphic-toggle.json",
+   "label": "Skeuomorphic Toggle",
+   "importName": "SkeuomorphicToggleCollection",
+   "runtime": "DOM/CSS + Three.js + Raw WebGL",
+   "tags": [
+    "css",
+    "dom",
+    "ui",
+    "toggle",
+    "switch",
+    "skeuomorphic",
+    "light mode",
+    "dark mode",
+    "interactive",
+    "control"
+   ],
+   "description": "Four takes on one switch: the preserved tactile skeuomorphic export plus flat modern, Three.js glass, and shader-lit treatments, each matching light and dark appearances automatically.",
+   "interaction": "Click or keyboard switching, pointer-lit 3D variants, automatic site/system appearance with explicit light and dark overrides, plus customizable speed, size, opacity, and palette",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 3e19e7fec9ac",
+   "sourceFiles": [
+    "src/shaders/neuform-isolated/sources/skeuomorphic-toggle.html",
+    "src/shaders/neuform-isolated/NeuformBatchEffects.tsx",
+    "src/shaders/skeuomorphic-toggle/SkeuomorphicToggleCollection.tsx",
+    "src/shaders/skeuomorphic-toggle/ModernToggle.tsx",
+    "src/shaders/skeuomorphic-toggle/GlassToggle.tsx",
+    "src/shaders/skeuomorphic-toggle/glassToggleScene.ts",
+    "src/shaders/skeuomorphic-toggle/ShaderToggle.tsx",
+    "src/shaders/skeuomorphic-toggle/shaderToggleScene.ts",
+    "src/shaders/skeuomorphic-toggle/shaderToggleGlsl.ts",
+    "src/shaders/skeuomorphic-toggle/toggleMode.ts"
+   ],
+   "variants": [
+    {
+     "id": "skeuomorphic-toggle",
+     "label": "Skeuomorphic",
+     "description": "The preserved packaged export: a tactile pill with an inset track and a raised sliding thumb.",
+     "url": "https://threeui.com/ui-elements/skeuomorphic-toggle/skeuomorphic-toggle"
+    },
+    {
+     "id": "modern",
+     "label": "Modern",
+     "description": "A flat, hairline-edged switch with a stretching knob, a check-to-dash mark, and one soft accent pool.",
+     "url": "https://threeui.com/ui-elements/skeuomorphic-toggle/modern"
+    },
+    {
+     "id": "glass",
+     "label": "Glass",
+     "description": "An Apple-style Three.js capsule in transmissive glass, refracting a drifting colour field around a lit core.",
+     "url": "https://threeui.com/ui-elements/skeuomorphic-toggle/glass"
+    },
+    {
+     "id": "shader",
+     "label": "Shader",
+     "description": "A raw-WebGL switch drawn entirely in one fragment pass: plasma interior, streaming sparks, chromatic bloom, and a pointer-lit thumb.",
+     "url": "https://threeui.com/ui-elements/skeuomorphic-toggle/shader"
+    }
+   ],
+   "controls": [
+    "mode",
+    "speed",
+    "size",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "matrix-field",
+   "category": "Backgrounds",
+   "url": "https://threeui.com/backgrounds/matrix-field",
+   "bundle": "https://threeui.com/source-code/matrix-field.json",
+   "label": "Laser",
+   "importName": "LaserCollection",
+   "runtime": "Raw WebGL",
+   "tags": [
+    "webgl",
+    "glsl",
+    "shader",
+    "laser",
+    "beam",
+    "matrix",
+    "pointer",
+    "reactive",
+    "background",
+    "grid",
+    "fog",
+    "halftone",
+    "prism",
+    "vanishing point",
+    "reduced motion",
+    "animated",
+    "variants"
+   ],
+   "description": "Four pointer-reactive laser scenes spanning a preserved matrix junction, atmospheric blade, vanishing array, and halftone relay.",
+   "interaction": "Variant selection, smoothed pointer response, reduced-motion stills, and customizable motion, geometry, opacity, and palette",
+   "asset": "No external assets",
+   "sourceCommit": "SHA-256 70cc015d5175",
+   "sourceFiles": [
+    "src/shaders/laser/LaserCollection.tsx",
+    "src/shaders/laser/LaserVariants.tsx",
+    "src/shaders/laser/laserShaders.ts",
+    "src/shaders/neuform-isolated/NeuformBatchEffects.tsx",
+    "src/shaders/neuform-isolated/sources/matrix-field.html"
+   ],
+   "variants": [
+    {
+     "id": "matrix-field",
+     "label": "Matrix Junction",
+     "description": "The preserved pointer-reactive three-way matrix junction.",
+     "url": "https://threeui.com/backgrounds/matrix-field/matrix-field"
+    },
+    {
+     "id": "atmospheric-blade",
+     "label": "Atmospheric Blade",
+     "description": "A white-hot emerald blade cutting through layered procedural vapor and faint mirage rails.",
+     "url": "https://threeui.com/backgrounds/matrix-field/atmospheric-blade"
+    },
+    {
+     "id": "vanishing-array",
+     "label": "Vanishing Array",
+     "description": "Violet and amber carrier rails accelerate from a pointer-steered horizon origin.",
+     "url": "https://threeui.com/backgrounds/matrix-field/vanishing-array"
+    },
+    {
+     "id": "halftone-relay",
+     "label": "Halftone Relay",
+     "description": "An off-axis cyan relay where vapor resolves into an animated screen-space dot field.",
+     "url": "https://threeui.com/backgrounds/matrix-field/halftone-relay"
+    }
+   ],
+   "controls": [
+    "speed",
+    "size",
+    "length",
+    "density",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "wireframe-forms",
+   "category": "UI Elements",
+   "url": "https://threeui.com/ui-elements/wireframe-forms",
+   "bundle": "https://threeui.com/source-code/wireframe-forms.json",
+   "label": "Wireframe Forms",
+   "importName": "WireframeForms",
+   "runtime": "Canvas 2D",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "ui",
+    "wireframe",
+    "3d",
+    "cube",
+    "cylinders",
+    "sphere",
+    "rotating",
+    "geometry",
+    "variants"
+   ],
+   "description": "A family of rotating wireframe forms, with the cube, crossed cylinders, and nested sphere isolated as individual variants.",
+   "interaction": "Three selectable shape variants with customizable speed, size, length, density, opacity, and palette",
+   "asset": "No owned binary assets",
+   "sourceCommit": "SHA-256 828c6a635b54",
+   "sourceFiles": [
+    "src/shaders/neuform-isolated/sources/wireframe-forms.html",
+    "src/shaders/neuform-isolated/NeuformBatchEffects.tsx"
+   ],
+   "variants": [
+    {
+     "id": "cube",
+     "label": "Cube",
+     "description": "The prismatic cube study isolated as a single rotating wireframe form.",
+     "url": "https://threeui.com/ui-elements/wireframe-forms/cube"
+    },
+    {
+     "id": "cylinders",
+     "label": "Cylinders",
+     "description": "The crossed logic cylinders isolated as a single rotating wireframe form.",
+     "url": "https://threeui.com/ui-elements/wireframe-forms/cylinders"
+    },
+    {
+     "id": "sphere",
+     "label": "Sphere",
+     "description": "The nested icosahedral sphere isolated as a single rotating wireframe form.",
+     "url": "https://threeui.com/ui-elements/wireframe-forms/sphere"
+    }
+   ],
+   "controls": [
+    "mode",
+    "speed",
+    "size",
+    "length",
+    "density",
+    "opacity",
+    "hue",
+    "saturation",
+    "brightness"
+   ]
+  },
+  {
+   "id": "brand-orbs",
+   "category": "UI Elements",
+   "url": "https://threeui.com/ui-elements/brand-orbs",
+   "bundle": "https://threeui.com/source-code/brand-orbs.json",
+   "label": "Brand Orbs",
+   "importName": "BrandOrbs",
+   "runtime": "Canvas 2D",
+   "tags": [
+    "canvas",
+    "canvas2d",
+    "ui",
+    "loading",
+    "loader",
+    "status",
+    "spinner",
+    "agent",
+    "thinking",
+    "orb",
+    "dots",
+    "particles",
+    "brand",
+    "logo",
+    "claude",
+    "anthropic",
+    "openai",
+    "chatgpt",
+    "codex",
+    "cursor",
+    "gemini",
+    "google",
+    "figma",
+    "framer",
+    "react",
+    "swift",
+    "apple",
+    "designcode",
+    "aura",
+    "dreamcut",
+    "ux",
+    "css",
+    "ios",
+    "neuform",
+    "github",
+    "x",
+    "twitter",
+    "instagram",
+    "threads",
+    "meta",
+    "linkedin",
+    "email",
+    "small",
+    "20px",
+    "medium",
+    "56px",
+    "light mode",
+    "dark mode",
+    "dark default",
+    "reduced motion",
+    "animated",
+    "variants"
+   ],
+   "description": "Twenty-three animated brand marks rebuilt as small and medium dimensional dot orbs for AI status, product activity, and compact loading states.",
+   "interaction": "Twenty-three variants, small and medium presets, dark-first theme, speed, pause, reduced motion, visibility pause, and deterministic restart",
+   "asset": "Embedded vector paths and procedural geometry; no external runtime assets",
+   "sourceCommit": "SHA-256 c2733de8cf7b",
+   "sourceFiles": [
+    "brand-orbs-v2.html — complete authored specimen library",
+    "src/shaders/brand-orbs/sources/brand-orbs-v2.html",
+    "src/shaders/brand-orbs/BrandOrbs.tsx"
+   ],
+   "variants": [
+    {
+     "id": "claude",
+     "label": "Claude Code",
+     "description": "A warm radial spark burst that expands and contracts around a bright core.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/claude"
+    },
+    {
+     "id": "openai",
+     "label": "OpenAI",
+     "description": "An interlocking six-loop bloom traced as a rotating monochrome dot lattice.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/openai"
+    },
+    {
+     "id": "codex",
+     "label": "Codex",
+     "description": "A rounded command-prompt mark that breathes as a dimensional prompt blob.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/codex"
+    },
+    {
+     "id": "cursor",
+     "label": "Cursor",
+     "description": "The Cursor arrow and frame resolved in dots with a timed click ripple.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/cursor"
+    },
+    {
+     "id": "gemini",
+     "label": "Gemini",
+     "description": "A four-point Gemini twinkle with orbiting light and a soft central pulse.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/gemini"
+    },
+    {
+     "id": "figma",
+     "label": "Figma",
+     "description": "Five dot swatches morph through the familiar stacked Figma silhouette.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/figma"
+    },
+    {
+     "id": "framer",
+     "label": "Framer",
+     "description": "The folded Framer F rendered as shifting blue dot bands.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/framer"
+    },
+    {
+     "id": "react",
+     "label": "React",
+     "description": "Three luminous electron ellipses orbit a bright React nucleus.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/react"
+    },
+    {
+     "id": "swift",
+     "label": "Swift",
+     "description": "The Swift bird silhouette sweeps through a warm coral dot field.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/swift"
+    },
+    {
+     "id": "designcode",
+     "label": "DesignCode",
+     "description": "The DesignCode monogram travels through a dense spherical dot field.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/designcode"
+    },
+    {
+     "id": "aura",
+     "label": "Aura",
+     "description": "Aura's native asymmetric dot field carries an expanding halo of light.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/aura"
+    },
+    {
+     "id": "dreamcut",
+     "label": "DreamCut",
+     "description": "Six tapered petals open, breathe, and rotate as a DreamCut bloom.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/dreamcut"
+    },
+    {
+     "id": "ui",
+     "label": "UI",
+     "description": "A paneled interface window assembles from cool blue dot segments.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/ui"
+    },
+    {
+     "id": "ux",
+     "label": "UX",
+     "description": "A warm journey curve connects three pulsing experience nodes.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/ux"
+    },
+    {
+     "id": "css",
+     "label": "CSS",
+     "description": "The CSS lettermark emerges as a purple scan moving through a rounded field.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/css"
+    },
+    {
+     "id": "ios",
+     "label": "iOS",
+     "description": "The iOS wordmark is sampled into an even monochrome dot matrix.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/ios"
+    },
+    {
+     "id": "neuform",
+     "label": "Neuform",
+     "description": "Eight directional Neuform chevrons rotate around a precise center.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/neuform"
+    },
+    {
+     "id": "github",
+     "label": "GitHub",
+     "description": "The Octocat silhouette appears as negative space inside a luminous orb.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/github"
+    },
+    {
+     "id": "x",
+     "label": "X",
+     "description": "The X mark is swept by a rotating highlight around its diagonal strokes.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/x"
+    },
+    {
+     "id": "instagram",
+     "label": "Instagram",
+     "description": "The Instagram camera mark glows through a violet-to-orange dot gradient.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/instagram"
+    },
+    {
+     "id": "threads",
+     "label": "Threads",
+     "description": "The Threads loop is traced by an angular highlight sweep.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/threads"
+    },
+    {
+     "id": "linkedin",
+     "label": "LinkedIn",
+     "description": "The LinkedIn mark scans across a blue rounded-square field.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/linkedin"
+    },
+    {
+     "id": "email",
+     "label": "Email",
+     "description": "A dimensional dotted envelope opens and sends a traveling signal.",
+     "url": "https://threeui.com/ui-elements/brand-orbs/email"
+    }
+   ],
+   "controls": [
+    "size",
+    "mode",
+    "speed"
+   ]
+  }
+ ]
+}

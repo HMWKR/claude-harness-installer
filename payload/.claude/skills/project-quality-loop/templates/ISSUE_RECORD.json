@@ -1,0 +1,21 @@
+{
+  "id": "DOMAIN-001",
+  "title": "",
+  "domain": "",
+  "severity": "Major",
+  "confidence": "HIGH",
+  "status": "OPEN",
+  "requirement": [],
+  "environment": {},
+  "reproduction": [],
+  "expected": "",
+  "actual": "",
+  "evidence": [],
+  "rootCause": "",
+  "remediation": "",
+  "verification": {
+    "method": "",
+    "result": "PENDING"
+  },
+  "residualRisk": ""
+}

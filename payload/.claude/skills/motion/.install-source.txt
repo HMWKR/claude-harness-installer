@@ -1,0 +1,1 @@
+source: motion-ai@14.2.0 (npm, sha1 7288d501714d66eb945515e62286fb52996cc9b6) — content/skills/motion copied 2026-10-16 by manual replication of dist/install.js (installer is TTY-only)

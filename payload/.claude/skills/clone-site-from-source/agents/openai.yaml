@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source Site Cloner"
+  short_description: "URL을 수집해 클론과 심층 UX·성장·플로우 분석 생성"
+  default_prompt: "Use $clone-site-from-source to comprehensively crawl all authorized public routes and representative dynamic route families into the current directory's 크롤링/<SiteName> folder, produce the complete 00–21 evidence-backed documentation set including UX strategy, JTBD, journeys, funnel and growth loops, detailed states and recovery, design evaluation, service audit, test matrix, and source registry, then build and verify the local frontend clone."

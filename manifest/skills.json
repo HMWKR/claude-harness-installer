@@ -1,0 +1,216 @@
+{
+  "external": [
+    {
+      "name": "animate",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/animate/SKILL.md"
+    },
+    {
+      "name": "animate-expo",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/animate-expo/SKILL.md"
+    },
+    {
+      "name": "animation-performance",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/animation-performance/SKILL.md"
+    },
+    {
+      "name": "animation-vocabulary",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/animation-vocabulary/SKILL.md"
+    },
+    {
+      "name": "apple-design",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/apple-design/SKILL.md"
+    },
+    {
+      "name": "ask-sonner",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/ask-sonner/SKILL.md"
+    },
+    {
+      "name": "audit-accessibility-figma",
+      "source": "southleft/skills-for-figma",
+      "skillPath": "skills/audit-accessibility-figma/SKILL.md"
+    },
+    {
+      "name": "break-ui",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/break-ui/SKILL.md"
+    },
+    {
+      "name": "computer-use",
+      "source": "stablyai/orca",
+      "skillPath": "skills/computer-use/SKILL.md"
+    },
+    {
+      "name": "design-taste-frontend",
+      "source": "Leonxlnx/taste-skill",
+      "skillPath": "skills/taste-skill/SKILL.md"
+    },
+    {
+      "name": "ego-browser",
+      "source": "citrolabs/ego-lite",
+      "skillPath": "skills/ego-browser/SKILL.md"
+    },
+    {
+      "name": "emil-design-eng",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/emil-design-eng/SKILL.md"
+    },
+    {
+      "name": "find-animation-opportunities",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/find-animation-opportunities/SKILL.md"
+    },
+    {
+      "name": "find-skills",
+      "source": "vercel-labs/skills",
+      "skillPath": "skills/find-skills/SKILL.md"
+    },
+    {
+      "name": "hallmark",
+      "source": "nutlope/hallmark",
+      "skillPath": "skills/hallmark/SKILL.md"
+    },
+    {
+      "name": "improve-animations",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/improve-animations/SKILL.md"
+    },
+    {
+      "name": "lint-design-figma",
+      "source": "southleft/skills-for-figma",
+      "skillPath": "skills/lint-design-figma/SKILL.md"
+    },
+    {
+      "name": "mobile-native",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/mobile-native/SKILL.md"
+    },
+    {
+      "name": "pick-ui-library",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/pick-ui-library/SKILL.md"
+    },
+    {
+      "name": "prototype",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/prototype/SKILL.md"
+    },
+    {
+      "name": "refero-design",
+      "source": "referodesign/refero_skill",
+      "skillPath": "skills/refero-design/SKILL.md"
+    },
+    {
+      "name": "remotion-best-practices",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-best-practices/SKILL.md"
+    },
+    {
+      "name": "remotion-captions",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-captions/SKILL.md"
+    },
+    {
+      "name": "remotion-create",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-create/SKILL.md"
+    },
+    {
+      "name": "remotion-docs",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-docs/SKILL.md"
+    },
+    {
+      "name": "remotion-interactivity",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-interactivity/SKILL.md"
+    },
+    {
+      "name": "remotion-maps",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-maps/SKILL.md"
+    },
+    {
+      "name": "remotion-markup",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-markup/SKILL.md"
+    },
+    {
+      "name": "remotion-multimedia",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-multimedia/SKILL.md"
+    },
+    {
+      "name": "remotion-render",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-render/SKILL.md"
+    },
+    {
+      "name": "remotion-saas",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-saas/SKILL.md"
+    },
+    {
+      "name": "remotion-studio",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-studio/SKILL.md"
+    },
+    {
+      "name": "remotion-upgrade",
+      "source": "remotion-dev/skills",
+      "skillPath": "skills/remotion-upgrade/SKILL.md"
+    },
+    {
+      "name": "reverse-engineer-anything",
+      "source": "morluto/rea",
+      "skillPath": ".agents/skills/reverse-engineer-anything/SKILL.md"
+    },
+    {
+      "name": "review-animations",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/review-animations/SKILL.md"
+    },
+    {
+      "name": "write-swift",
+      "source": "emilkowalski/skills",
+      "skillPath": "skills/write-swift/SKILL.md"
+    }
+  ],
+  "vendored": [
+    "amplify-presets",
+    "aside-browser",
+    "clone-site-from-source",
+    "cross-vendor",
+    "design-elevation-loop",
+    "design-toolchain",
+    "ffmpeg-skill",
+    "impeccable",
+    "insight-sentinel",
+    "korean-startup-ir",
+    "motion",
+    "motiscope-analyze",
+    "motiscope-doctor",
+    "motiscope-rebuild-site",
+    "motiscope-recreate",
+    "project-quality-loop",
+    "rea-recovery",
+    "threeui-reference",
+    "ultralearn",
+    "what-you"
+  ],
+  "excluded_local_links": [
+    "agent-architect",
+    "agent-teams-code-review",
+    "improve-codebase-architecture",
+    "js-refactor-cleanup-skill",
+    "think-teams",
+    "universal-service-experience-audit",
+    "unused-code-refactor-suggester",
+    "ux-pattern-researcher"
+  ]
+}

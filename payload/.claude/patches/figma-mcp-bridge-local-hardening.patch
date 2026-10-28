@@ -1,0 +1,394 @@
+diff --git a/server/src/bridge.ts b/server/src/bridge.ts
+index 97b0c80..a99bbf1 100644
+--- a/server/src/bridge.ts
++++ b/server/src/bridge.ts
+@@ -51,6 +51,15 @@ export class Bridge {
+       return;
+     }
+ 
++    // [local-hardening] 웹페이지발 웹소켓 차단: Figma 플러그인 UI 출처(null·figma.com)만 허용.
++    // 거부한 출처는 로그로 남긴다 — 정상 플러그인이 막히면 이 로그로 허용 목록을 조정한다.
++    const origin = request.headers.origin;
++    if (origin !== undefined && origin !== "null" && !/^https:\/\/([a-z0-9-]+\.)*figma\.com$/.test(origin)) {
++      console.error(`Rejected WebSocket from origin: ${origin}`);
++      socket.destroy();
++      return;
++    }
++
+     const url = new URL(request.url, "http://localhost");
+     const { fileKey, fileName = "Unknown" } = Object.fromEntries(url.searchParams);
+ 
+@@ -88,7 +97,8 @@ export class Bridge {
+       try {
+         const resp: BridgeResponse = JSON.parse(data.toString());
+         const pending = this.pending.get(resp.requestId);
+-        if (pending) {
++        // [local-hardening] 응답은 요청을 보낸 바로 그 연결에서 온 것만 받는다(타 연결의 응답 위조 차단)
++        if (pending && pending.ws === ws) {
+           clearTimeout(pending.timeout);
+           this.pending.delete(resp.requestId);
+           pending.resolve(resp);
+diff --git a/server/src/election.ts b/server/src/election.ts
+index 0233a2d..7934255 100644
+--- a/server/src/election.ts
++++ b/server/src/election.ts
+@@ -16,7 +16,8 @@ export class Election {
+     private port: number,
+     private node: Node
+   ) {
+-    this.leaderUrl = `http://localhost:${port}`;
++    // [local-hardening] 선거 핑도 127.0.0.1로 — ::1 선점자가 "살아 있는 리더"로 응답하지 못하게 한다
++    this.leaderUrl = `http://127.0.0.1:${port}`;
+   }
+ 
+   async start(): Promise<void> {
+diff --git a/server/src/follower.ts b/server/src/follower.ts
+index e513fff..868aede 100644
+--- a/server/src/follower.ts
++++ b/server/src/follower.ts
+@@ -23,7 +23,7 @@ export class Follower {
+ 
+     const response = await fetch(`${this.leaderUrl}/rpc`, {
+       method: "POST",
+-      headers: { "Content-Type": "application/json" },
++      headers: { "Content-Type": "application/json", "x-figma-bridge": "1" },  // [local-hardening]
+       body: JSON.stringify(rpcReq),
+       signal: AbortSignal.timeout(210_000),
+     });
+@@ -51,7 +51,7 @@ export class Follower {
+   async listConnectedFiles(): Promise<ConnectedFile[]> {
+     const response = await fetch(`${this.leaderUrl}/rpc`, {
+       method: "POST",
+-      headers: { "Content-Type": "application/json" },
++      headers: { "Content-Type": "application/json", "x-figma-bridge": "1" },  // [local-hardening]
+       body: JSON.stringify({ tool: "list_files" } as RPCRequest),
+       signal: AbortSignal.timeout(5_000),
+     });
+diff --git a/server/src/leader.ts b/server/src/leader.ts
+index b601d73..dbdf229 100644
+--- a/server/src/leader.ts
++++ b/server/src/leader.ts
+@@ -1,4 +1,9 @@
+ import http from "node:http";
++import net from "node:net";
++import { timingSafeEqual } from "node:crypto";
++import { readFileSync } from "node:fs";
++import { homedir } from "node:os";
++import { join } from "node:path";
+ import type { Duplex } from "node:stream";
+ import { Bridge } from "./bridge.js";
+ import { validateRpc } from "./schema.js";
+@@ -7,6 +12,36 @@ import type { ExportFormat } from "./tools.js";
+ import type { RPCRequest, RPCResponse } from "./types.js";
+ import { VERSION } from "./version.js";
+ 
++// [local-hardening] 로컬 전용 브릿지 보호 (2026-09-28 하네스 패치, ~/.claude/patches 참조)
++export const BRIDGE_HEADER = "x-figma-bridge";
++
++// 페어링 토큰: FIGMA_BRIDGE_TOKEN 또는 ~/.config/figma-mcp-bridge/token (하네스가 0600으로 생성)
++function loadPairingToken(): string {
++  const fromEnv = process.env.FIGMA_BRIDGE_TOKEN?.trim();
++  if (fromEnv) return fromEnv;
++  try {
++    return readFileSync(join(homedir(), ".config", "figma-mcp-bridge", "token"), "utf8").trim();
++  } catch {
++    return "";
++  }
++}
++const PAIRING_TOKEN = loadPairingToken();
++if (!PAIRING_TOKEN || PAIRING_TOKEN.length < 32) {
++  console.error("No pairing token (>=32 chars) — all plugin WebSocket connections will be rejected");
++}
++
++function tokenMatches(candidate: string): boolean {
++  if (!PAIRING_TOKEN || PAIRING_TOKEN.length < 32) return false;
++  const a = Buffer.from(candidate);
++  const b = Buffer.from(PAIRING_TOKEN);
++  return a.length === b.length && timingSafeEqual(a, b);
++}
++
++function isLoopbackHost(host: string | undefined, port: number): boolean {
++  if (!host) return false;
++  return host === `localhost:${port}` || host === `127.0.0.1:${port}`;
++}
++
+ /**
+  * Leader owns the WebSocket bridge to Figma and exposes HTTP endpoints for followers.
+  * Endpoints:
+@@ -17,6 +52,8 @@ import { VERSION } from "./version.js";
+ export class Leader {
+   private bridge: Bridge;
+   private server: http.Server | null = null;
++  // [local-hardening] [::1] 쪽 리스너 — 받은 연결을 같은 http 서버로 넘긴다
++  private v6Server: net.Server | null = null;
+ 
+   constructor(private port: number) {
+     this.bridge = new Bridge();
+@@ -29,6 +66,12 @@ export class Leader {
+   start(): Promise<void> {
+     return new Promise((resolve, reject) => {
+       const server = http.createServer((req, res) => {
++        // [local-hardening] DNS 리바인딩 차단: Host는 루프백 이름만 허용
++        if (!isLoopbackHost(req.headers.host, this.port)) {
++          res.writeHead(403);
++          res.end("Forbidden host");
++          return;
++        }
+         if (req.url === "/ping" && req.method === "GET") {
+           res.writeHead(200, { "Content-Type": "application/json" });
+           res.end(JSON.stringify({ status: "ok", version: VERSION }));
+@@ -36,6 +79,12 @@ export class Leader {
+         }
+ 
+         if (req.url === "/rpc" && req.method === "POST") {
++          // [local-hardening] 브라우저발 요청 차단: Origin이 있으면 거부, 사용자 정의 헤더 필수
++          // (웹페이지는 CORS 사전 요청 없이 사용자 정의 헤더를 보낼 수 없다)
++          if (req.headers.origin !== undefined || req.headers[BRIDGE_HEADER] !== "1") {
++            this.sendJSON(res, 403, { error: "Forbidden: local bridge clients only" });
++            return;
++          }
+           this.handleRPC(req, res);
+           return;
+         }
+@@ -45,10 +94,17 @@ export class Leader {
+       });
+ 
+       server.on("upgrade", (req: http.IncomingMessage, socket: Duplex, head: Buffer) => {
++        if (!isLoopbackHost(req.headers.host, this.port)) {
++          socket.destroy();
++          return;
++        }
+         const pathname = new URL(req.url ?? "", "http://localhost").pathname;
+-        if (pathname === "/ws") {
++        // [local-hardening] 플러그인 페어링 토큰: 경로 /ws/<토큰>만 허용. `Origin: null`은 샌드박스 iframe을 쓰는
++        // 일반 웹페이지도 만들 수 있으므로 출처 검사만으로는 사칭을 막지 못한다(codex 2차 검수). 토큰 없으면 전부 거부.
++        if (pathname.startsWith("/ws/") && tokenMatches(pathname.slice(4))) {
+           this.bridge.handleUpgrade(req, socket, head);
+         } else {
++          if (pathname.startsWith("/ws")) console.error("Rejected WebSocket: missing or wrong pairing token");
+           socket.destroy();
+         }
+       });
+@@ -63,10 +119,39 @@ export class Leader {
+         }
+       });
+ 
+-      server.listen(this.port, () => {
+-        this.server = server;
+-        console.error(`Leader listening on :${this.port}`);
+-        resolve();
++      // [local-hardening] 루프백에만 바인딩 — 같은 네트워크의 다른 기기에서 접속 불가
++      server.listen(this.port, "127.0.0.1", () => {
++        // [local-hardening] 같은 포트의 [::1]도 함께 점유한다. 'localhost'를 ::1부터 푸는 클라이언트(플러그인 등)가
++        // [::1]을 먼저 잡은 다른 프로세스에 붙어 토큰·요청을 넘기지 않게 한다. [::1]이 이미 점유돼 있으면 경고만
++        // 한 번 남기고 127.0.0.1로 계속 리더를 맡는다 — 리더를 포기하면 127.0.0.1이 비어 IPv4 실패 후 IPv6로 넘어가는
++        // 클라이언트까지 점유자에게 붙고, 선거 주기마다 같은 로그가 쌓였다(2026-09-30 검토 회귀).
++        const v6 = net.createServer((socket) => server.emit("connection", socket));
++        const ready = (): void => {
++          this.server = server;
++          console.error(`Leader listening on :${this.port}`);
++          resolve();
++        };
++        const onStartupError = (err: NodeJS.ErrnoException): void => {
++          if (err.code === "EADDRNOTAVAIL" || err.code === "EAFNOSUPPORT") {
++            // IPv6 루프백이 없는 환경 — 선점당할 [::1]도 없으므로 IPv4만으로 진행
++            ready();
++            return;
++          }
++          console.error(
++            err.code === "EADDRINUSE"
++              ? `WARNING: [::1]:${this.port} is held by another process (possible port squatting) — clients that resolve ` +
++                  `'localhost' to ::1 may reach it; leading on 127.0.0.1 only`
++              : `WARNING: failed to bind [::1]:${this.port}: ${err.message} — leading on 127.0.0.1 only`,
++          );
++          ready();
++        };
++        v6.once("error", onStartupError);
++        v6.listen(this.port, "::1", () => {
++          v6.removeListener("error", onStartupError);
++          v6.on("error", (err) => console.error("Leader [::1] server error:", err));
++          this.v6Server = v6;
++          ready();
++        });
+       });
+     });
+   }
+@@ -150,5 +235,9 @@ export class Leader {
+       this.server.close();
+       this.server = null;
+     }
++    if (this.v6Server) {
++      this.v6Server.close();
++      this.v6Server = null;
++    }
+   }
+ }
+diff --git a/server/src/node.ts b/server/src/node.ts
+index 61e4eb8..aaaaf93 100644
+--- a/server/src/node.ts
++++ b/server/src/node.ts
+@@ -13,7 +13,8 @@ export class Node {
+   private follower: Follower;
+ 
+   constructor(private port: number) {
+-    this.follower = new Follower(`http://localhost:${port}`);
++    // [local-hardening] 리더 바인드 주소(127.0.0.1)로 직접 접속 — 'localhost'가 ::1로 풀리면 선점자에게 갈 수 있다
++    this.follower = new Follower(`http://127.0.0.1:${port}`);
+   }
+ 
+   get role(): Role {
+diff --git a/server/src/tools.ts b/server/src/tools.ts
+index 2c63ac2..91110e7 100644
+--- a/server/src/tools.ts
++++ b/server/src/tools.ts
+@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+ import { lookup } from "node:dns/promises";
+ import { mkdir, readFile, realpath, stat, writeFile } from "node:fs/promises";
+ import { isIP } from "node:net";
++import { homedir } from "node:os";
+ import path from "node:path";
+ import type { z } from "zod";
+ import type { Node } from "./node.js";
+@@ -98,7 +99,8 @@ export function registerTools(server: McpServer, node: Node, port: number): void
+         let files = node.listConnectedFiles();
+         if (files === undefined) {
+           // Follower: fetch via RPC from leader
+-          const follower = new Follower(`http://localhost:${port}`);
++          // [local-hardening] 리더 바인드 주소로 직접 접속(::1 선점 회피)
++          const follower = new Follower(`http://127.0.0.1:${port}`);
+           files = await follower.listConnectedFiles();
+         }
+         return {
+@@ -724,7 +726,10 @@ function parseToolInput<T>(
+  * @param workspaceRoot - Root directory that must contain the resolved path.
+  * @returns Absolute path inside the workspace root.
+  */
+-function resolveAndValidateOutputPath(outputPath: string, workspaceRoot: string): string {
++async function resolveAndValidateOutputPath(
++  outputPath: string,
++  workspaceRoot: string
++): Promise<string> {
+   const resolvedRoot = path.resolve(workspaceRoot);
+   const resolvedPath = path.resolve(resolvedRoot, outputPath);
+   const relativePath = path.relative(resolvedRoot, resolvedPath);
+@@ -732,9 +737,47 @@ function resolveAndValidateOutputPath(outputPath: string, workspaceRoot: string)
+   if (escapesRoot) {
+     throw new Error(`outputPath must be inside the MCP server working directory: ${resolvedRoot}`);
+   }
++  // [local-hardening] 어휘 검사만으로는 작업 폴더 안의 심볼릭 링크 폴더를 거쳐 밖에 쓸 수 있다 —
++  // 이미 존재하는 가장 가까운 상위 폴더를 실경로로 풀어 다시 검사한다(loadLayersJson과 같은 규칙).
++  const realRoot = await realpath(resolvedRoot);
++  await assertWorkspaceNotHome(realRoot);
++  let existingDir = path.dirname(resolvedPath);
++  let realDir: string | null = null;
++  while (realDir === null) {
++    try {
++      realDir = await realpath(existingDir);
++    } catch (err) {
++      const parent = path.dirname(existingDir);
++      if (!isNodeError(err) || err.code !== "ENOENT" || parent === existingDir) throw err;
++      existingDir = parent;
++    }
++  }
++  const realRelative = path.relative(realRoot, realDir);
++  if (realRelative.startsWith("..") || path.isAbsolute(realRelative)) {
++    throw new Error(
++      `outputPath resolves outside the MCP server working directory (symlink): ${outputPath}`
++    );
++  }
+   return resolvedPath;
+ }
+ 
++/**
++ * [local-hardening] 작업 폴더가 홈 디렉터리이거나 홈을 품은 상위 폴더(/, /Users 등)이면 거부한다.
++ * 격리 기준이 홈 전체가 되면 ".ssh/id_ed25519" 같은 경로도 "작업 폴더 안"으로 통과해 비밀 파일을
++ * 플러그인 쪽으로 보내거나 홈 어디에나 쓸 수 있다(2026-09-30 감사 #20). 세션을 프로젝트 폴더에서 연다.
++ * @param realRoot - 실경로로 푼 작업 폴더.
++ */
++async function assertWorkspaceNotHome(realRoot: string): Promise<void> {
++  const home = path.resolve(homedir());
++  const realHome = await realpath(home).catch(() => home);
++  const homeFromRoot = path.relative(realRoot, realHome);
++  if (!homeFromRoot.startsWith("..") && !path.isAbsolute(homeFromRoot)) {
++    throw new Error(
++      `MCP server working directory is the home directory or contains it (${realRoot}) — local file paths are disabled; start the session from a project folder`
++    );
++  }
++}
++
+ /**
+  * Loads an image source as a base64 string from a URL, data URI, or local file.
+  * @param source - Image source: URL, data URI, or local file path.
+@@ -755,6 +798,7 @@ async function loadLayersJson(
+   workspaceRoot: string
+ ): Promise<Record<string, unknown>> {
+   const resolvedRoot = await realpath(path.resolve(workspaceRoot));
++  await assertWorkspaceNotHome(resolvedRoot); // [local-hardening] 홈 전체가 범위가 되지 않게
+   const lexicalPath = path.resolve(resolvedRoot, source);
+   // Resolve symlinks before the containment check — a workspace-local symlink
+   // must not be able to point the read outside the working directory.
+@@ -817,7 +861,18 @@ async function loadImageSourceAsBase64(source: string, workspaceRoot: string): P
+       `image source must be inside the MCP server working directory: ${resolvedRoot}`
+     );
+   }
+-  const bytes = await readFile(resolvedPath);
++  // [local-hardening] 심볼릭 링크를 풀어 다시 검사 — 작업 폴더 안의 링크로 밖의 파일(키 등)을 읽어
++  // 플러그인 쪽으로 보내지 못하게 한다(loadLayersJson과 같은 규칙). 검사한 실경로를 그대로 읽는다.
++  const realRoot = await realpath(resolvedRoot);
++  await assertWorkspaceNotHome(realRoot);
++  const realSource = await realpath(resolvedPath);
++  const realRelative = path.relative(realRoot, realSource);
++  if (realRelative.startsWith("..") || path.isAbsolute(realRelative)) {
++    throw new Error(
++      `image source resolves outside the MCP server working directory (symlink): ${source}`
++    );
++  }
++  const bytes = await readFile(realSource);
+   if (bytes.length > MAX_IMAGE_BYTES) {
+     throw new Error(`Image exceeds ${MAX_IMAGE_BYTES} bytes`);
+   }
+@@ -1079,7 +1134,7 @@ async function saveScreenshotItemToFile(
+   let resolvedOutputPath = item.outputPath;
+ 
+   try {
+-    resolvedOutputPath = resolveAndValidateOutputPath(item.outputPath, workspaceRoot);
++    resolvedOutputPath = await resolveAndValidateOutputPath(item.outputPath, workspaceRoot);
+     const inferredFormat = inferFormatFromPath(resolvedOutputPath);
+     const resolvedFormat = resolveExportFormat(item.format ?? defaultFormat, inferredFormat);
+     const resolvedScale = resolveScale(item.scale, defaultScale);
+@@ -1099,7 +1154,11 @@ async function saveScreenshotItemToFile(
+     }
+ 
+     const screenshotExport = getSingleScreenshotExport(resp.data);
+-    const bytesWritten = await writeBase64ToFile(screenshotExport.base64, resolvedOutputPath);
++    const bytesWritten = await writeBase64ToFile(
++      screenshotExport.base64,
++      resolvedOutputPath,
++      workspaceRoot
++    );
+ 
+     return {
+       index,
+@@ -1127,11 +1186,21 @@ async function saveScreenshotItemToFile(
+  * Writes base64-encoded bytes to a file, creating parent directories as needed.
+  * @param base64 - Base64-encoded file contents.
+  * @param outputPath - Destination file path.
++ * @param workspaceRoot - Root directory the destination must stay inside.
+  * @returns Number of bytes written.
+  */
+-async function writeBase64ToFile(base64: string, outputPath: string): Promise<number> {
++async function writeBase64ToFile(
++  base64: string,
++  outputPath: string,
++  workspaceRoot: string
++): Promise<number> {
+   const bytes = Buffer.from(base64, "base64");
++  // [local-hardening] 플러그인 응답을 기다리는 사이 끼어든 심볼릭 링크 폴더를 막는다 — mkdir 전에 다시 검사해
++  // 밖에 폴더도 만들지 않고, mkdir 뒤에 한 번 더 검사한다. 마지막 이름이 링크인 경우는
++  // "wx"(O_CREAT|O_EXCL)가 따라가지 않고 EEXIST로 거부한다.
++  await resolveAndValidateOutputPath(outputPath, workspaceRoot);
+   await mkdir(path.dirname(outputPath), { recursive: true });
++  await resolveAndValidateOutputPath(outputPath, workspaceRoot);
+   try {
+     await writeFile(outputPath, bytes, { flag: "wx" });
+   } catch (err) {

@@ -1,0 +1,7 @@
+{
+  "_comment": "bkit 로컬 설정 (2026-07-27). bkit은 PROJECT_DIR(=cwd)의 bkit.config.json을 먼저 읽고, 없으면 플러그인 루트를 본다. 플러그인 루트는 재설치·marketplace update로 날아가므로 여기가 유일한 영구 위치다. 다른 프로젝트에서 작업할 때는 그 디렉토리에 이 파일을 복사해야 적용된다. 정본 사본: ~/.claude/bkit.config.json",
+  "triggers": {
+    "confidenceThreshold": 0.05,
+    "_why": "ambiguity 주입 억제. 2026-07-27 실측: 이 탐지기는 한국어에서 신호가 거꾸로다 — '해줘'(실제 모호)는 침묵하고 '버튼 색을 파란색으로 바꿔줘'(완전히 명확)에는 60자 영어 경고를 붙였다. 어떤 임계값에서도 유용한 판별이 안 나오므로 사실상 비활성화한다. contextInjection 자체는 살려 둬서 onboarding·agentTeams·pdcaCoreRules 등 나머지 섹션은 그대로 동작한다."
+  }
+}

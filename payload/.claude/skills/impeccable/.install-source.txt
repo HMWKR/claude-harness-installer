@@ -1,0 +1,2 @@
+source: https://github.com/pbakaus/impeccable tag skill-v4.8.0 (commit 414603bf14c7a344edb466bb1f85690c77ce8b7d, engine 0.1.18)
+installed: 2026-10-28 copy of .claude/skills/impeccable. engine darwin-arm64 sha256 543ee2f7... (sidecar = asset digest = engine-checksums.txt = actual)

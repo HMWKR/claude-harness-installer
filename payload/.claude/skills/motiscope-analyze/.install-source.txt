@@ -1,0 +1,1 @@
+source: github.com/KumarSashank/motiscope @ c0ce3ddedfbe59f445b74372a064e908587a648a (MIT) — integrations/skills/* copied 2026-10-16; CLI at ~/.local/share/motiscope (symlink ~/.local/bin/motiscope); plugin SessionStart hook deliberately NOT installed (harness: third-party hooks off); assets generate (Gemini/OpenAI image APIs) is NOT used — images = codex

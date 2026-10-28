@@ -1,0 +1,72 @@
+# uiux-skill-router.sh 회귀 코퍼스 — 프롬프트<TAB>기대 플래그(ui·video·qa, 없으면 -). harness-lint가 매번 대조한다.
+# 출처: 2026-09-30 감사 #84(미탐)·#85·#86(오탐) 실측 프롬프트 + Remotion 영상 라우팅 사례
+동네 필라테스 스튜디오 소개 사이트 만들어줘	ui
+가게 소개 페이지 만들어줘	ui
+첫 화면을 정리해 주세요. 여백을 더 주고 제목을 키우고 버튼은 하나만 남기세요.	ui
+좀 더 세련되게 바꿔 줘.	ui
+웹 사이트 만들어줘	ui
+홈 페이지 리뉴얼	ui
+프론트 엔드 버그	ui
+build a home page for my bakery	ui
+버튼 색상 바꿔줘	ui
+반응형 레이아웃 깨지는 거 고쳐줘	ui
+다크모드 추가해줘	ui
+tailwind로 카드 컴포넌트 만들어	ui
+fix the CSS spacing on mobile	ui
+make the layout responsive	ui
+mockup and wireframe for onboarding screens	ui
+대시보드 차트 만들어줘	ui
+모달 열릴 때 애니메이션 부드럽게	ui
+add a spring animation to the drawer	ui
+Spring Boot 프로젝트에 JPA 엔티티 추가	-
+Spring Boot 컨트롤러 500 에러 원인	-
+Add a multimodal input to the Python API	-
+The emotion classifier needs retraining	-
+Merge the promotion pricing logic	-
+Export the data to a spreadsheet	-
+Design the database schema for orders	-
+시스템 디자인 면접 준비 도와줘	-
+Translate this to Polish	-
+state machine transition table in Rust	-
+투자 포트폴리오 리밸런싱 계산	-
+dragon boss fight balancing	-
+French toast recipe	-
+감사합니다	-
+고마워요, 감사합니다!	-
+요청해주셔서 감사드립니다	-
+Update to the latest version of numpy	-
+npm install react@latest	-
+Qatar airline booking API	-
+제품 홍보 영상 만들어줘	video
+브랜드 소개 모션그래픽 영상 만들어줘	video
+유튜브 쇼츠에 자막 넣어서 편집해줘	video
+make a promo video for my app	video
+render the remotion composition to mp4	video
+영상 처리 파이프라인 OpenCV 최적화	-
+화상회의 영상 통화 기능 연결	-
+랜딩 페이지 히어로에 배경 영상 넣어줘	ui video
+보안 감사 진행해줘	qa
+pytest 테스트 실패 원인 찾아줘	qa
+디자인 QA 검수해줘	ui qa
+UI를 개선해줘	ui
+CSS가 모바일에서 깨져	ui
+pytest가 계속 실패해	qa
+remotion으로 인트로 만들어줘	video
+로고 애니메이션 영상 만들어줘	video
+figma에서 가져온 디자인 반영해줘	ui
+홈페이지 디자인 고도화해줘. 완성도 기준 충족될 때까지 반복	ui qa
+랜딩 페이지 디자인을 경쟁사 수준으로 끌어올려줘	ui
+make the landing page design premium and iterate until it meets the bar	ui
+3D 인터랙티브 버튼 레퍼런스 찾아서 적용해줘	ui ref
+threeui에서 히어로 배경 셰이더 가져와서 넣어줘	ui
+add a webgl liquid metal button to the signup page	ui
+3D 프린터 출력 견적 계산 로직 짜줘	-
+레퍼런스 찾아서 벤치마크해줘	ui ref
+무드보드 만들어줘	ui ref
+스크롤할 때 버벅이는 거 고쳐줘	ui perf
+the hero animation is janky and drops frames	ui perf
+카드에 긴 이름 들어가면 깨지는지 봐줘	ui edge
+stress-test this table with worst-case data	ui edge qa
+이 화면녹화 mp4처럼 우리 사이트 히어로 애니메이션 만들어줘	ui rec2web
+recreate this screen recording's motion on our landing page hero	ui rec2web
+이 녹화 참고해서 제품 데모 영상 만들어줘	video
