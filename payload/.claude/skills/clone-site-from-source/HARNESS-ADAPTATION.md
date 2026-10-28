@@ -12,7 +12,7 @@ sha256  6b7a4744cf1c651ff80a16fdccae039ade480ce85011820a585e24c30711663c
 **이 스킬은 OpenAI/Codex 환경에서 왔다.** 근거: `agents/openai.yaml`(Codex 에이전트 인터페이스
 정의), `Codex Desktop` 프리뷰 참조, `.openai/hosting.json` 산출물, `@Sites` 공유 타깃,
 `npm run test:sites` 테스트 타깃. 이 하네스에는 업스트림이 없으므로 `~/.claude/skills/`가
-정본 위치이고, git 추적 대상이라 설치 즉시 백업된다(원격 `HMWKR/claude-harness`).
+정본 위치이고, git 추적 대상이라 설치 즉시 백업된다(사용자 원격 백업).
 
 ## 왜 그대로 넣지 않았는가
 

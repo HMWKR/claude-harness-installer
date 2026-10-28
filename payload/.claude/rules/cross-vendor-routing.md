@@ -1,13 +1,13 @@
 # 교차벤더 라우팅 — codex MCP
 
-> 구 image-codex-routing.md의 승계·확장 (2026-08-09). 이미지 = codex(2026-09-28 grok에서 전환), 영상 = Remotion(2026-09-30) + 생성형은 fal.ai·Blender(2026-10-22), grok은 2026-10-02 퇴역(구독 해지 — `disabled/README.md`). 검증·심판 좌석도 규정한다.
+> 구 image-codex-routing.md의 승계·확장 (2026-08-09). 이미지 = codex(2026-09-28), 영상 = Remotion(2026-09-30) + 생성형은 fal.ai·Blender(2026-10-22). 검증·심판 좌석도 규정한다.
 
 ## 라우팅 표
 
 | 작업 유형 | 벤더·경로 | 비고 |
 |---|---|---|
 | 벡터/코드형 이미지 (로고·아이콘·SVG·다이어그램) | codex — `mcp__codex__codex` | codex는 벡터·코드 자산에 강함 |
-| 래스터/사진형 이미지 (히어로·일러스트·목업 사진) | codex — `mcp__codex__codex`(내장 `image_gen__imagegen`) | **2026-09-28 사용자 지시로 grok에서 전환.** 실측: 1254×1254 PNG(~2MB), 원본은 `~/.codex/generated_images/<threadId>/`에 남고 지시하면 cwd로 복사. 호출 규약·후처리는 아래 "이미지 생성 호출" |
+| 래스터/사진형 이미지 (히어로·일러스트·목업 사진) | codex — `mcp__codex__codex`(내장 `image_gen__imagegen`) | **2026-09-28 사용자 지시.** 실측: 1254×1254 PNG(~2MB), 원본은 `~/.codex/generated_images/<threadId>/`에 남고 지시하면 cwd로 복사. 호출 규약·후처리는 아래 "이미지 생성 호출" |
 | 코드형 영상 (모션그래픽·타이틀·제품 데모·데이터/지도 애니메이션·자막·여러 소재 조립·대량 변형) | 로컬 — Remotion(`remotion-best-practices` 스킬) | **2026-09-30 사용자 지시.** 벤더 호출이 아니라 로컬 렌더. 권유 기준·운용 규칙은 영상 신호 때 라우터가 주입하고, 근거·한계는 design-toolchain 스킬 §5 |
 | 참고 녹화(mp4·mov·gif) → 웹 페이지 안 모션 | 로컬 — motiscope(`motiscope-analyze`) 위주, 정교함이 필요하면 Remotion 매개변수 렌더로 원본과 프레임 대조 | **2026-10-16 사용자 지시·실측**: 단독 188px → 프레임 판독 107px → Remotion 루프 10px. 결과물은 CSS·JS 코드(영상으로 박지 않음). 정본 design-toolchain `references/remotion-vs-motiscope.md` |
 | 생성형 영상 클립(AI 영상) | fal.ai(image-to-video, 예: `fal-ai/kling-video/v3/pro/image-to-video`) + Blender 기준 프레임 | **2026-10-22 사용자 지시.** Blender로 시작·끝 프레임을 렌더해 넣으면 색·구도를 통제한다. 영상화 전 Blender 장면을 사용자에게 검사받고, 비용 상한은 사용자가 정한다. 키는 출력·커밋 금지. 후처리는 Remotion·ffmpeg |

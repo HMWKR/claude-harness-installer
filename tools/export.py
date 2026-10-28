@@ -38,13 +38,13 @@ OFFICIAL = {"claude-plugins-official": {"source": "github", "repo": "anthropics/
 
 def is_text(p: Path) -> bool:
     try:
-        chunk = p.read_bytes()[:8192]
+        data = p.read_bytes()
     except OSError:
         return False
-    if b"\0" in chunk:
+    if b"\0" in data[:8192]:
         return False
     try:
-        chunk.decode("utf-8")
+        data.decode("utf-8")  # 전체를 본다 — 앞부분만 자르면 멀티바이트 글자가 잘려 오판한다
         return True
     except UnicodeDecodeError:
         return False
@@ -57,8 +57,28 @@ REDACT = json.loads(_REDACT_FILE.read_text()) if _REDACT_FILE.exists() else {}
 EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@(?!anthropic\.com|users\.noreply)[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.(?!json|png|jpe?g|webp|svg|html?|md|js|ts|css|txt|yml|yaml)[a-z]{2,}\b")
 
 
+# 퇴역한 grok 관련 언급은 배포판에서 뺀다(사용자 지시 2026-10-29). 원문이 바뀌어 안 맞으면
+# 아래 scan의 "grok" 검사가 잡아서 export가 실패한다.
+GROK_STRIP = {
+    "(2026-09-28 grok에서 전환)": "(2026-09-28)",
+    ", grok은 2026-10-02 퇴역(구독 해지 — `disabled/README.md`)": "",
+    "**2026-09-28 사용자 지시로 grok에서 전환.** ": "**2026-09-28 사용자 지시.** ",
+    " — grok 퇴역 2026-10-02": "",
+    "(grok 판정석은 2026-10-02 퇴역)": "",
+    " grok은 퇴역(`disabled/` 참조).": "",
+    "2026-09-28 사용자 지시로 grok→codex 전환.": "2026-09-28 사용자 지시.",
+    ", grok 퇴역)": ")",
+    "(2026-08-09: Bash(grok -p*) deny 차단 실측)": "(2026-08-09 카나리 실측)",
+    " grok은 퇴역(`disabled/README.md`).": "",
+}
+# 제3자 원문(impeccable 문서)과 벤더 판별 코드(dloop)의 일반 언급은 그대로 둔다
+GROK_OK = ("skills/impeccable/reference/", "skills/design-elevation-loop/scripts/dloop.py", "tools/export.py")
+
+
 def scrub_text(s: str) -> str:
     s = s.replace(HOME, "__HOME__")
+    for k, v in GROK_STRIP.items():
+        s = s.replace(k, v)
     for k, v in REDACT.items():
         s = s.replace(k, v)
     return EMAIL.sub("<redacted-email>", s)
@@ -117,6 +137,7 @@ def export_settings(src: Path, out: Path):
                                       if not d.startswith(HOME)]
     for k in ("allow", "ask"):
         perms[k] = [r for r in perms.get(k, []) if not PERSONAL_PERM.search(r)]
+    perms["deny"] = [r for r in perms.get("deny", []) if "grok" not in r]
 
     # settings.local.json은 cwd가 홈일 때만 읽힌다. 훅(anti-loop·checkpoint)만 전역 settings로
     # 합치고, 그 파일의 넓은 Bash 자동 허용(curl·python3·rm 등)은 공개본에 싣지 않는다.
@@ -156,6 +177,7 @@ SCAN = [
     (re.compile(r"claude\.ai/(code/)?artifact/[A-Za-z0-9-]+"), "claude.ai artifact"),
     (re.compile(r"\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b"), "uuid"),
     (EMAIL, "email"),
+    (re.compile(r"grok", re.I), "grok"),
     (re.compile(r"(gh[opsu]_[A-Za-z0-9]{20,}|sk-[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}|xox[bpa]-[A-Za-z0-9-]{10,}|AIza[0-9A-Za-z_-]{30,})"), "token"),
     (re.compile(r"Bearer\s+[A-Za-z0-9._-]{20,}"), "bearer"),
 ]
@@ -170,6 +192,8 @@ def scan(root: Path, extra):
                 for rx, label in pats:
                     if label == "uuid" and "threeui-reference/catalog/" in str(p):
                         continue  # 공개 카탈로그(threeui.com)의 항목 ID
+                    if label == "grok" and any(x in str(p) for x in GROK_OK):
+                        continue
                     if rx.search(line):
                         hits.append(f"{p.relative_to(root)}:{i}: [{label}] {line.strip()[:160]}")
     return hits

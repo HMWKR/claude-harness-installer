@@ -22,8 +22,6 @@
       "Read(//**/secrets/**)",
       "Read(//**/credentials.json)",
       "Read(//**/.credentials.json)",
-      "Bash(grok -p*)",
-      "Bash(grok --single*)",
       "mcp__playwright",
       "mcp__claude-in-chrome",
       "mcp__plugin_accesslint_accesslint__audit_live",

@@ -26,7 +26,7 @@ description: 현행 하네스 규칙 참조 가이드
 | 검증 규율(발견=결함) · 브라우저 우선순위 | `rules/uncompromising-rigor.md` (2026-09-05: **Aside 전용**, Playwright·Chrome MCP는 deny · 2026-09-28: `aside-browser` 스킬 로드 의무) |
 | feature 실동작 검증(`aside repl`) | `rules/live-feature-verify.md` |
 | 멀티에이전트 경계 · 파일=기억 · 표준 파이프라인 | `rules/agent-teams-boundaries.md` |
-| 교차벤더 라우팅(codex = 코드 검증·이미지 생성, 영상 = 로컬 Remotion, grok 퇴역) · 크롤 가치 판정 | `rules/cross-vendor-routing.md` · CLAUDE.md 작업 방식 |
+| 교차벤더 라우팅(codex = 코드 검증·이미지 생성, 영상 = 로컬 Remotion) · 크롤 가치 판정 | `rules/cross-vendor-routing.md` · CLAUDE.md 작업 방식 |
 | 오케스트레이션 실행 템플릿 | `~/.claude/workflows/conductor-verify.js` |
 | 완료 게이트 · goal 트리거 | fablize `gate_stop` · `goals.py`(CLAUDE.md Operating mode) |
 | 루프 방지 · plan 체크마크 | `rules/loop-prevention.md` |

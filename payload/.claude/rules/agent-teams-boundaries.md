@@ -19,7 +19,7 @@
 
 ## 모델·심판 (§5.3 — 완료권위 서열은 CLAUDE.md 그대로)
 - 서브에이전트·팀메이트 모델은 haiku 금지·소넷 이상(하한선). 세션 모델 상속이 기본이고 스킬·에이전트 정의의 모델 하드코딩은 무시한다. bkit lead의 opus 하드코딩은 유지. (omc는 은퇴 — disabled/ 참조.)
-- 리뷰·완료판정 판정단에 이종 벤더 최소 1석 혼합(동종 다수결 상관오류 방지): **codex = 코드·논리 검증석**(`mcp__codex__codex` 호출 시 `sandbox:"read-only"` 명시 필수 — config.toml 기본이 full-access라 검증자 쓰기 금지 경계를 호출 단위로 집행), 시각·실사 판정과 고위험 작업은 codex + 관점이 다른 Claude critic 판정단(agentType `critic`)으로 분산한다(grok 판정석은 2026-10-02 퇴역). 교차벤더 호출은 main 직접만(중첩 스폰 stall — rules/cross-vendor-routing.md). 단 심판은 위 승인·경계 배선을 전제로 붙인다 — **골격 먼저, 심판은 그 위에**(codex 검수 원칙).
+- 리뷰·완료판정 판정단에 이종 벤더 최소 1석 혼합(동종 다수결 상관오류 방지): **codex = 코드·논리 검증석**(`mcp__codex__codex` 호출 시 `sandbox:"read-only"` 명시 필수 — config.toml 기본이 full-access라 검증자 쓰기 금지 경계를 호출 단위로 집행), 시각·실사 판정과 고위험 작업은 codex + 관점이 다른 Claude critic 판정단(agentType `critic`)으로 분산한다. 교차벤더 호출은 main 직접만(중첩 스폰 stall — rules/cross-vendor-routing.md). 단 심판은 위 승인·경계 배선을 전제로 붙인다 — **골격 먼저, 심판은 그 위에**(codex 검수 원칙).
 
 ## 적극 활용 판정 (팀메이트 우선 발동, 사용자 지침 2026-07-06)
 - 아래 신호가 **하나라도** 있으면 혼자 처리하지 말고 **네이티브 팀메이트(Agent teams)·Workflow를 먼저 고려**한다 — 명시 요청이 없어도 능동 발동:

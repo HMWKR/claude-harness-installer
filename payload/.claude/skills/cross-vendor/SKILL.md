@@ -16,7 +16,7 @@ Claude가 이미 가진 두 이종 벤더를 **적절한 지점에 스스로** �
 | 되돌리기 비싼 아키텍처·설계 결정 | codex read-only | 비가역 결정에 독립 관점 |
 | 2회 수정 실패 후 근본원인 | codex read-only | 같은 모델이 못 본 것을 다른 모델이 봄 |
 | 보안·알고리즘 엣지케이스 검증 | codex read-only | 적대적 관점 |
-| 래스터/사진 이미지 생성 | codex MCP (`image_gen__imagegen`, sandbox workspace-write + 산출 전용 cwd) | 2026-09-28 사용자 지시로 grok→codex 전환. 호출 규약: rules/cross-vendor-routing.md "이미지 생성 호출" |
+| 래스터/사진 이미지 생성 | codex MCP (`image_gen__imagegen`, sandbox workspace-write + 산출 전용 cwd) | 2026-09-28 사용자 지시. 호출 규약: rules/cross-vendor-routing.md "이미지 생성 호출" |
 | 영상 | 코드형은 로컬 Remotion, 생성형은 fal.ai(+Blender 기준 프레임) | 2026-10-22 사용자 지시. rules/cross-vendor-routing.md 표 |
 | 시각/실사 판정·고위험(비가역+영향 큼) | codex + Claude critic 판정단 | 관점 분산(동종 다수결만으로 닫지 않는다) |
 
@@ -30,7 +30,7 @@ mcp__codex__codex(prompt="<대상+DoD+판정 형식 GO/NO-GO>", sandbox="read-on
 ```
 `sandbox` 생략 시 codex-sandbox-guard 훅이 차단한다(반드시 명시). `danger-full-access`, `config`의 sandbox 키, `workspace-write`의 넓은 cwd(홈·`~/.claude`·`~/.codex`·소스 루트 등)도 차단된다 — 쓰기 호출은 산출 전용 하위 폴더를 cwd로 준다. `/codex:review`·`/codex:adversarial-review`는 사용자 슬래시 전용(disable-model-invocation)이라 모델은 위 MCP를 직접 쓴다.
 
-**codex MCP 토큰 오류**("access token could not be refreshed") 시: MCP 서버가 낡은 인증을 들고 있는 것 — 사용자가 `/mcp`로 재연결할 때까지 같은 판정을 CLI로 한다: `codex exec --skip-git-repo-check -s read-only "<프롬프트>"`(2026-10-02 실측). CLI도 가드가 검사한다 — `-s` 필수, workspace-write는 `--cd <좁은 산출 폴더>` 필수. if·for·`{}`·`$()`·백틱 안의 codex exec는 판정 불가로 막히니 단순한 한 줄로 쓴다(출력용 `echo codex exec`도 막힘 — 안전 쪽 오탐). 백그라운드로 돌릴 때는 `< /dev/null`을 붙인다 — 표준 입력이 열려 있으면 "Reading additional input from stdin"에서 멈춘다(2026-10-02 실측). grok은 퇴역(`disabled/README.md`).
+**codex MCP 토큰 오류**("access token could not be refreshed") 시: MCP 서버가 낡은 인증을 들고 있는 것 — 사용자가 `/mcp`로 재연결할 때까지 같은 판정을 CLI로 한다: `codex exec --skip-git-repo-check -s read-only "<프롬프트>"`(2026-10-02 실측). CLI도 가드가 검사한다 — `-s` 필수, workspace-write는 `--cd <좁은 산출 폴더>` 필수. if·for·`{}`·`$()`·백틱 안의 codex exec는 판정 불가로 막히니 단순한 한 줄로 쓴다(출력용 `echo codex exec`도 막힘 — 안전 쪽 오탐). 백그라운드로 돌릴 때는 `< /dev/null`을 붙인다 — 표준 입력이 열려 있으면 "Reading additional input from stdin"에서 멈춘다(2026-10-02 실측).
 
 ## 경로별 규율
 

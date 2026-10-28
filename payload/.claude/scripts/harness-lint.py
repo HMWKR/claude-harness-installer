@@ -43,7 +43,7 @@ IGNORE_REFS = {"/goal", "/what", "/what-ce", "/insight-check", "/loop", "/effort
 DENY_TOOLS = {"Read", "Write", "Edit", "MultiEdit", "Bash", "Glob", "Grep", "WebFetch",
               "WebSearch", "NotebookEdit", "Agent", "Task"}
 # `//` 접두 요건은 파일 경로 기반 규칙에만 적용된다 — Bash는 명령 접두 패턴이라
-# 별도 문법이고 실집행이 카나리로 확인됨(2026-08-09: Bash(grok -p*) deny 차단 실측).
+# 별도 문법이고 실집행이 카나리로 확인됨(2026-08-09 카나리 실측).
 PATH_DENY_TOOLS = {"Read", "Write", "Edit", "MultiEdit", "NotebookEdit", "Glob", "Grep"}
 # 괄호 없이 도구 전체를 막는 bare 규칙에 쓸 수 있는 내장 도구명(2026-09-28 세션 도구 목록 기준).
 # 목록에 없는 이름은 오타일 가능성이 높아 형식 불명으로 신고한다 — 새 내장 도구가 생기면 추가한다.

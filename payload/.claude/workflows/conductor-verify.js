@@ -146,5 +146,5 @@ return {
   codexGate: 'PENDING',
   imageRoutingNeeded: hasImage,
   recommendation: preVerify ? preVerify.verdict : 'no-go',
-  note: '이 번들은 Claude 사전검증까지다. **교차벤더 최종 게이트는 main이 직접 호출**한다(중첩 호출은 stall-prone — 2026-07-07 codex 스모크): codexGate = mcp__codex__codex(sandbox:"read-only")로 DoD 대비 독립 검증(고위험·시각/실사 판정은 관점이 다른 critic 판정단을 더한다 — grok 퇴역 2026-10-02). imageRoutingNeeded=true면 main이 kind=image는 codex 생성(벡터·래스터), kind=image-analysis는 codex·critic 판정으로 라우팅(영상은 로컬 Remotion — rules/cross-vendor-routing.md). 승인권=main, 검증증거=밖.',
+  note: '이 번들은 Claude 사전검증까지다. **교차벤더 최종 게이트는 main이 직접 호출**한다(중첩 호출은 stall-prone — 2026-07-07 codex 스모크): codexGate = mcp__codex__codex(sandbox:"read-only")로 DoD 대비 독립 검증(고위험·시각/실사 판정은 관점이 다른 critic 판정단을 더한다). imageRoutingNeeded=true면 main이 kind=image는 codex 생성(벡터·래스터), kind=image-analysis는 codex·critic 판정으로 라우팅(영상은 로컬 Remotion — rules/cross-vendor-routing.md). 승인권=main, 검증증거=밖.',
 }
